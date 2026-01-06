@@ -1,0 +1,92 @@
+<div class="min-h-screen bg-gray-50 text-gray-800 p-8 space-y-10">
+
+  <!-- Title -->
+  <div class="mb-4">
+    <h1 class="text-3xl font-bold">Course Staff</h1>
+    <p class="text-gray-600">23CSE311 – Software Engineering</p>
+  </div>
+
+  <!-- Coordinators -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Course Coordinator</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let c of coordinators" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
+        <img [src]="c.photoUrl" [alt]="c.name"
+             class="w-20 h-20 rounded-full object-cover border" />
+        <div>
+          <h3 class="font-semibold text-lg">{{ c.name }}</h3>
+          <p class="text-sm text-gray-600">{{ c.role }}</p>
+          <p *ngIf="c.email" class="text-sm text-blue-600 mt-1">{{ c.email }}</p>
+          <p *ngIf="c.sectionCodes?.length" class="text-xs text-gray-500 mt-2">
+            Handles sections:
+            <span class="font-medium">{{ c.sectionCodes!.join(', ') }}</span>
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Faculty</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let f of faculty" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
+        <img [src]="f.photoUrl" [alt]="f.name"
+             class="w-20 h-20 rounded-full object-cover border" />
+        <div>
+          <h3 class="font-semibold text-lg">{{ f.name }}</h3>
+          <p class="text-sm text-gray-600">{{ f.role }}</p>
+          <p *ngIf="f.email" class="text-sm text-blue-600 mt-1">{{ f.email }}</p>
+          <p *ngIf="f.sectionCodes as sections" class="text-xs text-gray-500 mt-2">
+  Sections:
+  <span class="font-medium">{{ sections.join(', ') }}</span>
+</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Assistants -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Teaching Assistants</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let ta of teachingAssistants" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
+        <img [src]="ta.photoUrl" [alt]="ta.name"
+             class="w-20 h-20 rounded-full object-cover border" />
+        <div>
+          <h3 class="font-semibold text-lg">{{ ta.name }}</h3>
+          <p class="text-sm text-gray-600">{{ ta.role }}</p>
+          <p *ngIf="ta.email" class="text-sm text-blue-600 mt-1">{{ ta.email }}</p>
+          <!-- TAs don't have classrooms/sections -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sections Table -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Sections for this Course</h2>
+    <div class="bg-white rounded-xl shadow border overflow-x-auto">
+      <table class="min-w-full text-sm">
+        <thead class="bg-gray-100 text-gray-700">
+          <tr>
+            <th class="px-4 py-2 text-left">Section</th>
+            <th class="px-4 py-2 text-left">Classroom</th>
+            <th class="px-4 py-2 text-left">Faculty</th>
+            <th class="px-4 py-2 text-left">Slot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of sections" class="border-t">
+            <td class="px-4 py-2 font-medium">{{ s.code }}</td>
+            <td class="px-4 py-2">{{ s.classroom }}</td>
+            <td class="px-4 py-2">{{ s.faculty }}</td>
+            <td class="px-4 py-2">{{ s.slot || '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
