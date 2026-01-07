@@ -26,9 +26,9 @@ export class Staff {
     // 🔹 Course Coordinators
   coordinators: StaffMember[] = [
     {
-      name: 'Mr. Vedaj J Padman',
+      name: 'Prof. Vedaj J Padman',
       role: 'Course Coordinator',
-      email: 'abc.xyz@univ.edu',
+      email: 'jp_vedaj@cb.amrita.edu',
       photoUrl: '/staff/staff.jpg',
       sectionCodes: ['CSE D']
     },
@@ -38,21 +38,21 @@ export class Staff {
   // 🔹 Faculty (responsible for specific sections/classrooms)
   faculty: StaffMember[] = [
     {
-      name: 'Ms. P. Malathi',
+      name: 'Prof. P. Malathi',
       role: 'Faculty',
       email: 'p_malathy@cb.amrita.edu',
       photoUrl: '/staff/malathi_p.jpg',
       sectionCodes: ['CSE A']
     },
     {
-      name: 'Ms. G. Krishna Priya',
+      name: 'Prof. G. Krishna Priya',
       role: 'Faculty',
       email: 'g_krishnapriya@cb.amrita.edu',
       photoUrl: '/staff/krishnapriya_g.jpg',
       sectionCodes: ['CSE B', 'CSE F']
     },
     {
-      name: 'Ms.Anisha Radhakrishnan',
+      name: 'Prof. Anisha Radhakrishnan',
       role: 'Faculty',
       email: 'r_anisha@cb.amrita.edu',
       photoUrl: '/staff/anisha.jpg',
@@ -96,13 +96,13 @@ export class Staff {
 
   // 🔹 8 Sections this course is taken for
   sections: SectionInfo[] = [
-    { code: 'CSE A', classroom: 'AB3-A204', faculty: 'Ms. P. Malathi', slot: 'asmk' },
-    { code: 'CSE B', classroom: 'AB3-A205', faculty: 'Ms. G. Krishna Priya', slot: 'A1/L1' },
-    { code: 'CSE C', classroom: 'AB3-C203', faculty: 'Ms.Anisha Radhakrishnan', slot: 'B1/L2' },
-    { code: 'CSE D', classroom: 'AB3-C204', faculty: 'Mr. Vedaj J Padman', slot: 'B1/L2' },
-    { code: 'CSE E', classroom: 'AB3-C205', faculty: 'Dr. Suchithra M', slot: 'C1/L3' },
-    { code: 'CSE F', classroom: 'AB3-A204,C204', faculty: 'Ms. G. Krishna Priya', slot: 'C1/L3' },
-    { code: 'CSE G', classroom: 'AB3-C302', faculty: 'Dr. Senthil Kumar.T', slot: 'D1/L4' },
-    { code: 'CSE H', classroom: 'AB3-F401', faculty: 'Ms.Anisha Radhakrishnan', slot: 'D1/L4' },
+    { code: 'CSE A', classroom: 'AB3-A204', faculty: 'Ms. P. Malathi' },
+    { code: 'CSE B', classroom: 'AB3-A205', faculty: 'Ms. G. Krishna Priya'},
+    { code: 'CSE C', classroom: 'AB3-C203', faculty: 'Ms.Anisha Radhakrishnan'},
+    { code: 'CSE D', classroom: 'AB3-C204', faculty: 'Mr. Vedaj J Padman'},
+    { code: 'CSE E', classroom: 'AB3-C205', faculty: 'Dr. Suchithra M' },
+    { code: 'CSE F', classroom: 'AB3-A204,C204', faculty: 'Ms. G. Krishna Priya' },
+    { code: 'CSE G', classroom: 'AB3-C302', faculty: 'Dr. Senthil Kumar.T'},
+    { code: 'CSE H', classroom: 'AB3-F401', faculty: 'Ms.Anisha Radhakrishnan' },
   ];
 }

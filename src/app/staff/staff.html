@@ -13,10 +13,10 @@
       <div *ngFor="let c of coordinators" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
         <img [src]="c.photoUrl" [alt]="c.name"
              class="w-20 h-20 rounded-full object-cover border" />
-        <div>
+        <div class="min-w-0">
           <h3 class="font-semibold text-lg">{{ c.name }}</h3>
           <p class="text-sm text-gray-600">{{ c.role }}</p>
-          <p *ngIf="c.email" class="text-sm text-blue-600 mt-1">{{ c.email }}</p>
+          <p *ngIf="c.email" class="text-sm text-blue-600 mt-1 break-words">{{ c.email }}</p>
           <p *ngIf="c.sectionCodes?.length" class="text-xs text-gray-500 mt-2">
             Handles sections:
             <span class="font-medium">{{ c.sectionCodes!.join(', ') }}</span>
@@ -33,10 +33,10 @@
       <div *ngFor="let f of faculty" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
         <img [src]="f.photoUrl" [alt]="f.name"
              class="w-20 h-20 rounded-full object-cover border" />
-        <div>
+        <div class="min-w-0">
           <h3 class="font-semibold text-lg">{{ f.name }}</h3>
           <p class="text-sm text-gray-600">{{ f.role }}</p>
-          <p *ngIf="f.email" class="text-sm text-blue-600 mt-1">{{ f.email }}</p>
+          <p *ngIf="f.email" class="text-sm text-blue-600 mt-1 break-words">{{ f.email }}</p>
           <p *ngIf="f.sectionCodes as sections" class="text-xs text-gray-500 mt-2">
   Sections:
   <span class="font-medium">{{ sections.join(', ') }}</span>
@@ -54,10 +54,10 @@
       <div *ngFor="let ta of teachingAssistants" class="bg-white p-4 rounded-xl shadow border flex gap-4 items-center">
         <img [src]="ta.photoUrl" [alt]="ta.name"
              class="w-20 h-20 rounded-full object-cover border" />
-        <div>
+        <div class="min-w-0">
           <h3 class="font-semibold text-lg">{{ ta.name }}</h3>
           <p class="text-sm text-gray-600">{{ ta.role }}</p>
-          <p *ngIf="ta.email" class="text-sm text-blue-600 mt-1">{{ ta.email }}</p>
+          <p *ngIf="ta.email" class="text-sm text-blue-600 mt-1 break-words">{{ ta.email }}</p>
           <!-- TAs don't have classrooms/sections -->
         </div>
       </div>
@@ -74,7 +74,6 @@
             <th class="px-4 py-2 text-left">Section</th>
             <th class="px-4 py-2 text-left">Classroom</th>
             <th class="px-4 py-2 text-left">Faculty</th>
-            <th class="px-4 py-2 text-left">Slot</th>
           </tr>
         </thead>
         <tbody>
@@ -82,7 +81,6 @@
             <td class="px-4 py-2 font-medium">{{ s.code }}</td>
             <td class="px-4 py-2">{{ s.classroom }}</td>
             <td class="px-4 py-2">{{ s.faculty }}</td>
-            <td class="px-4 py-2">{{ s.slot || '-' }}</td>
           </tr>
         </tbody>
       </table>
