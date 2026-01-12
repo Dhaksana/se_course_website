@@ -1,0 +1,259 @@
+
+    <div class="max-w-4xl mx-auto ">
+
+      <!-- Intro -->
+      <section id="intro">
+        <h1 class="text-3xl font-bold mb-3">Mastering Scrum in OpenProject</h1>
+        <p class="text-gray-600 leading-relaxed">
+         OpenProject is a powerful tool for Agile teams, but it treats data differently than Jira or Trello. This guide provides detailed instructions on how to author, structure, and execute a Scrum project.
+        </p>
+
+        <div class="mt-6 p-4 rounded-xl border bg-blue-50 text-blue-900">
+          <strong>Golden Rule:</strong>
+          <p class="mt-2">
+            In OpenProject, Epics, Stories, Bugs, and Tasks are all <strong>Work Packages</strong>. You differentiate them by changing their <strong>Type</strong>. The "Scrum" view is simply a specific way of filtering and visualizing these Work Packages.
+
+          </p>
+        </div>
+      </section>
+
+      <!-- Start Here -->
+      <section id="start-here">
+        <h2 class="text-2xl font-semibold mb-4">Start Here (10-Minute Setup)</h2>
+        <p class="text-gray-600 leading-relaxed">
+         This is a one-page checklist you can follow in order, even if you have never used OpenProject before (beyond having an account).
+        </p>
+
+        <div class="p-5 rounded-xl border bg-green-50">
+          <ol class="list-decimal list-inside space-y-2 text-gray-700">
+            <li>Open your project and confirm you can access Project settings in the left sidebar.</li>
+            <li>Go to Project settings → Modules.</li>
+            <li>Enable Backlogs and Taskboard, then click Save.</li>
+            <li>Go to Work packages and confirm you can see the green + Create button.</li>
+            <li>Create one Epic as your container for work.</li>
+            <li>Create two User Stories and set their Parent to the Epic.</li>
+            <li>Go to Backlogs and create one Sprint (a Version) named “Sprint 1” with dates.</li>
+            <li>Drag both User Stories from the Product Backlog into “Sprint 1”.</li>
+            <li>Open Taskboard, select “Sprint 1” from the dropdown, and confirm your stories appear.</li>
+            <li>Move one item across the workflow columns to confirm you can update progress during the sprint.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Roles -->
+      <section id="roles">
+        <h2 class="text-2xl font-semibold mb-4">Roles Mapping</h2>
+
+        <div class="bg-white rounded-xl border shadow overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-4 py-2 text-left">Scrum Role</th>
+                <th class="px-4 py-2 text-left">What they do in OpenProject</th>
+                <th class="px-4 py-2 text-left">Where in the UI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2 font-medium">Product Owner</td>
+                <td class="px-4 py-2">Owns and prioritizes the Product Backlog. Writes Epics and User Stories, clarifies acceptance criteria, and decides what is ready for sprint planning.</td>
+                <td class="px-4 py-2">Work packages to create Epics/Stories; Backlogs to prioritize and assign stories to sprints.</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2 font-medium">Scrum Master</td>
+                <td class="px-4 py-2">Ensures the workflow is usable, supports sprint ceremonies, helps remove blockers, and ensures the team can operate smoothly in the tool.</td>
+                <td class="px-4 py-2">Project settings → Modules for setup; Backlogs and Taskboard for sprint execution.</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2 font-medium">Developers</td>
+                <td class="px-4 py-2">Break stories into tasks, update status during the sprint, log remaining work if used, and close work packages when done.</td>
+                <td class="px-4 py-2">Taskboard for daily work; open individual work packages for details, assignments, and status updates.</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2 font-medium">Stakeholders</td>
+                <td class="px-4 py-2">Review progress and outcomes, provide feedback, and follow changes without needing to manage the backlog day-to-day.</td>
+                <td class="px-4 py-2">Work packages (filtered views), and sprint results in Backlogs depending on access.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Mini Example -->
+      <section id="mini-example">
+        <h2 class="text-2xl font-semibold mb-4 mt-2">Mini Example: Epic → Sprint → Done</h2>
+
+        <p class="text-gray-600 leading-relaxed">
+         This is a fully worked, minimal path you can replicate in a fresh project. The goal is not completeness; it is to get one coherent loop working end-to-end.
+        </p>
+        <div class="pl-2">
+        <h3 class="text-xl font-semibold mt-1 mb-2">Step A: Create one Epic</h3>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Go to Work Packages.</li>
+          <li>Click + Create and select Epic.</li>
+          <li>Set Subject to “User Authentication”.</li>
+          <li>Write a short Description explaining the goal: users can sign up and log in securely.</li>
+          <li>Save.</li>
+        </ol>
+        <h3 class="text-xl font-semibold mt-1 mb-2">Step B: Create two User Stories under that Epic</h3>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Click + Create and select User Story.</li>
+          <li>Subject: “As a visitor, I want to create an account, so that I can access protected features.”</li>
+          <li>Set Story Points to 3 and set Parent to “User Authentication”. Save.</li>
+          <li>Create a second story: “As a user, I want to log in, so that I can access my account.”</li>
+          <li>Set Story Points to 2 and set Parent to “User Authentication”. Save.</li>
+        </ol>
+
+        <h3 class="text-xl font-semibold mt-1 mb-2">Step C: Create one Sprint and pull the stories into it</h3>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Go to Backlogs.</li>
+          <li>Create a new Sprint (Version) named “Sprint 1” and set start/end dates.</li>
+          <li>Drag both User Stories from the Product Backlog column into “Sprint 1”.</li>
+        </ol>
+
+        <h3 class="text-xl font-semibold mt-1 mb-2">Step D: Move work to Done during the sprint</h3>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Go to Taskboard.</li>
+          <li>Select “Sprint 1” in the Sprint dropdown.</li>
+          <li>During execution, team members move cards across columns as status changes.</li>
+          <li>When a story is completed and accepted, move it to the final status used by your workflow (often “Closed”).</li>
+        </ol>
+
+        <div class="mt-6 p-4 rounded-xl border bg-blue-50 text-blue-900">
+          <strong>What you should observe:</strong>
+          <p class="mt-2">
+            The Epic becomes your top-level container, the Sprint (Version) becomes the timebox, and the Taskboard becomes the day-to-day execution view. If the stories are correctly linked to the Epic using the Parent field, you preserve hierarchy and reporting across the project.
+
+          </p>
+        </div>
+
+      </div>
+
+
+
+      </section>
+
+      <!-- Config -->
+      <section id="config">
+        <h2 class="text-2xl font-semibold mb-4">Scrum Configuration</h2>
+        <p class="text-gray-600 leading-relaxed">
+         Before writing a single story, you must ensure your project is "Agile-aware". By default, OpenProject may hide the Backlogs module.
+        </p>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">Enable the Backlogs Module </h3>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Go to your project's homepage.</li>
+          <li>Click Project Settings (sidebar) → Modules.</li>
+          <li>Ensure the checkbox for <strong>Backlogs</strong> is selected.</li>
+          <li>Ensure the checkbox for <strong>Taskboard</strong> is selected.</li>
+          <li>Click Save.</li>
+        </ol>
+
+      </section>
+
+      <!-- Epics -->
+      <section id="epics">
+        <h2 class="text-2xl font-semibold mb-4">2. Defining Epics (The "Big Picture")</h2>
+        <p class="text-gray-600 leading-relaxed">
+         Epics serve as the container for your work. They represent large initiatives that cannot be completed in a single sprint.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-1 mb-2">How to Create an Epic</h3>
+        <p class="pl-4 text-gray-600 leading-relaxed">
+         You do not create Epics in the Backlog view; you create them in the standard Work Package list.
+        </p>
+        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+          <li>Click Work Packages in the sidebar.</li>
+          <li>Click the green + Create button in the top-right.</li>
+          <li>Select <strong>Epic</strong> from the dropdown list.</li>
+          <li><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</li>
+          <li><strong>Description:</strong> Describe the strategic value.</li>
+          <li><strong>Status:</strong> Set to "New" or "In Specification".</li>
+        </ol>
+        <h1>imagee</h1>
+      </section>
+
+      <!-- Stories -->
+      <section id="stories">
+        <h2 class="text-2xl font-semibold mb-4">3. User Stories & The Hierarchy</h2>
+        <p class="text-gray-600 leading-relaxed">
+         This is the most critical step. If you do not link Stories to Epics, you will lose the ability to see progress bars and roadmaps.
+        </p>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">Creating a Story</h3>
+        
+        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
+          <li>Click + Create → <strong>User Story</strong>.</li>
+          <li><strong>Subject:</strong> Use the standard format: "As a [role], I want [feature], so that [benefit]."</li>
+          <li>Select Epic from the dropdown list.</li>
+          <li><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</li>
+          <li>Story Points: Enter your estimate (Fibonacci: 1, 2, 3, 5, 8...).</li>
+        </ol>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">Linking to the Parent (The Hierarchy)</h3>
+        <p class="pl-4 text-gray-600 leading-relaxed">
+         While creating (or editing) the User Story, you must create the Parent-Child relationship.
+        </p>
+        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
+          <li>In the User Story form, locate the <strong>Parent</strong> field.</li>
+          <li>Type the name of the Epic you created in Step 2.</li>
+          <li>Select Epic from the dropdown list.</li>
+          <li>Select the Epic from the autocomplete list.</li>
+          <li>Save the story.</li>
+        </ol>
+
+        <div class="mt-6 p-4 rounded-xl border bg-green-50 text-green-900">
+          <p>
+            <strong>Tip: </strong>In the Work Packages list view, your stories will now appear indented under the Epic. This visual hierarchy confirms the link is active.
+          </p>
+        </div>
+        <h1>imagee</h1>
+      </section>
+
+      <!-- Backlogs -->
+      <section id="backlogs">
+        <h2 class="text-2xl font-semibold mb-4">4. Backlog Management (Sprint Planning)</h2>
+        <p class="text-gray-600 leading-relaxed">
+         Now that you have authored stories, it is time to plan a Sprint. In OpenProject, Sprints are managed in the <strong>Backlogs</strong> view.
+        </p>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">Understanding the View</h3>
+        <ul class="list-disc pl-9 space-y-2 text-gray-700">
+          <li><strong>Left Column (Product Backlog):</strong> This lists all open User Stories that are not yet assigned to a sprint.</li>
+          <li><strong>Right Column (Versions/Sprints):</strong> This lists your sprints. In OpenProject, a Sprint is technically a "Version".</li>
+
+        </ul>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">Step-by-Step Planning</h3>
+        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
+          <li>Click Backlogs in the sidebar.</li>
+          <li>Create a new Sprint by clicking the arrow next to "Versions" on the right -> <strong>+ New Version.</strong></li>
+          <li>Name it (e.g., "Sprint 1") and set the dates.</li>
+          <li><strong>Drag and Drop:</strong> Click a User Story in the left column and drag it into the Sprint column on the right.</li>
+          <li>Observe the total <strong>Story Points</strong> calculating automatically at the top of the Sprint column to ensure you don't overcommit.</li>
+        </ol>
+        <p>imageee</p>
+      </section>
+
+      <!-- Taskboard -->
+      <section id="taskboard">
+        <h2 class="text-2xl font-semibold mb-4">5. Execution: The Taskboard</h2>
+        <p class="text-gray-600 leading-relaxed">
+         Once the Sprint begins, the team leaves the "Backlogs" view and moves to the "Taskboard" for their daily standups.
+        </p>
+
+        <h3 class="text-l font-semibold mt-1 mb-2">How to use the Taskboard</h3>
+        <p class="pl-4 text-gray-600 leading-relaxed">
+         You do not create Epics in the Backlog view; you create them in the standard Work Package list.
+        </p>
+        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
+          <li>Click Taskboard in the sidebar.</li>
+          <li>Ensure the current Sprint is selected in the top-right dropdown.</li>
+          <li>You will see columns matching your workflow (e.g., New, In Progress, Closed).</li>
+          <li><strong>Action:</strong> Team members drag cards from left to right as they complete work.</li>
+          <li><strong>Burndown:</strong> Clicking the "Burndown" chart icon at the top right will show the team's velocity against the remaining days.</li>
+        </ol>
+        <h1>imagee</h1>
+      </section>
+
+    </div>

@@ -1,17 +1,75 @@
-  <div class="min-h-screen flex bg-gray-50 text-gray-800">
+<div class="min-h-screen flex bg-gray-50 text-gray-800">
 
-  
-  <aside class="w-64 bg-white shadow-lg border-r p-6">
-    <h2 class="text-2xl font-bold mb-6">Software Engg</h2>
+  <aside class="w-64 bg-white shadow-lg border-r p-6 fixed inset-y-0 flex flex-col">
+    <div class="flex items-center gap-3 mb-6">
+      <img src="/SchoolLogo.png" alt="School Logo" class="w-20 h-20">
+      <h2 class="text-xl font-bold">Software Engineering</h2>
+    </div>
 
-    <nav class="space-y-4">
-      <a class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer" routerLink="/" routerLinkActive="text-blue-600 font-semibold">Home</a>
-      <a class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer" routerLink="/resources" routerLinkActive="text-blue-600 font-semibold">Resources</a>
-      <a class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer" routerLink="/staff" routerLinkActive="text-blue-600 font-semibold">Staff</a>
+    <nav class="space-y-3 flex-1">
+
+      <!-- Home -->
+      <a routerLink="/"
+         routerLinkActive="text-blue-600 font-semibold"
+         class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer">
+        Home
+      </a>
+
+      <!-- Resources -->
+      <a routerLink="/resources"
+         routerLinkActive="text-blue-600 font-semibold"
+         class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer">
+        Resources
+      </a>
+
+      <!-- Staff -->
+      <a routerLink="/staff"
+         routerLinkActive="text-blue-600 font-semibold"
+         class="block text-gray-700 hover:text-blue-600 font-medium cursor-pointer">
+        Staff
+      </a>
+
+      <!-- Guidelines (Expandable) -->
+      <div>
+        <div class="flex items-center justify-between cursor-pointer"
+             (click)="toggleGuidelines()">
+
+          <a routerLink="/guidelines"
+             routerLinkActive="text-blue-600 font-semibold"
+             class="text-gray-700 hover:text-blue-600 font-medium">
+            Guidelines
+          </a>
+
+          <!-- Arrow -->
+          <svg
+            class="w-4 h-4 transition-transform duration-200"
+            [class.rotate-90]="guidelinesOpen"
+            fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <!-- Sublist -->
+        <div *ngIf="guidelinesOpen"
+             class="ml-4 mt-2 space-y-2 border-l pl-3">
+
+          <a routerLink="/guidelines/op-scrum"
+             routerLinkActive="text-blue-600 font-semibold"
+             class="block text-sm text-gray-600 hover:text-blue-600 cursor-pointer">
+            OP Scrum Guide
+          </a>
+
+        </div>
+      </div>
 
     </nav>
   </aside>
 
-<router-outlet> </router-outlet>
-</div>
+  <!-- Main Content -->
+  <div class="flex-1 ml-64 p-8">
+    <router-outlet></router-outlet>
+  </div>
 
+</div>
