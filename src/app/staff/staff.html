@@ -14,8 +14,8 @@
         <img [src]="c.photoUrl" [alt]="c.name"
              class="w-20 h-20 rounded-full object-cover border" />
         <div class="min-w-0">
-          <h3 class="font-semibold text-lg">{{ c.name }}</h3>
-          <p class="text-sm text-gray-600">{{ c.role }}</p>
+          <h3 class="font-semibold text-lg break-words">{{ c.name }}</h3>
+          <p class="text-sm text-gray-600 break-words">{{ c.role }}</p>
           <p *ngIf="c.email" class="text-sm text-blue-600 mt-1 break-words">{{ c.email }}</p>
           <p *ngIf="c.sectionCodes?.length" class="text-xs text-gray-500 mt-2">
             Handles sections:
@@ -34,8 +34,8 @@
         <img [src]="f.photoUrl" [alt]="f.name"
              class="w-20 h-20 rounded-full object-cover border" />
         <div class="min-w-0">
-          <h3 class="font-semibold text-lg">{{ f.name }}</h3>
-          <p class="text-sm text-gray-600">{{ f.role }}</p>
+          <h3 class="font-semibold text-lg break-words">{{ f.name }}</h3>
+          <p class="text-sm text-gray-600 break-words">{{ f.role }}</p>
           <p *ngIf="f.email" class="text-sm text-blue-600 mt-1 break-words">{{ f.email }}</p>
           <p *ngIf="f.sectionCodes as sections" class="text-xs text-gray-500 mt-2">
   Sections:
