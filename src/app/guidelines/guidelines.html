@@ -1,78 +1,79 @@
 
-    <div class="max-w-4xl mx-auto ">
+    <div class="max-w-5xl mx-auto">
 
       <!-- Intro -->
-      <section id="intro">
-        <h1 class="text-3xl font-bold mb-3">Mastering Scrum in OpenProject</h1>
-        <p class="text-gray-600 leading-relaxed">
-         OpenProject is a powerful tool for Agile teams, but it treats data differently than Jira or Trello. This guide provides detailed instructions on how to author, structure, and execute a Scrum project.
-        </p>
+      <section id="intro" class="mb-12">
+        <div class="border-b-2 border-gray-300 pb-4 mb-8">
+          <h1 class="text-4xl font-bold text-gray-900 mb-3">Mastering Scrum in OpenProject</h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            OpenProject is a powerful tool for Agile teams, but it treats data differently than Jira or Trello. This guide provides detailed instructions on how to author, structure, and execute a Scrum project.
+          </p>
+        </div>
 
-        <div class="mt-6 p-4 rounded-xl border bg-blue-50 text-blue-900">
-          <strong>Golden Rule:</strong>
-          <p class="mt-2">
+        <div class="p-6 rounded-lg bg-blue-100 border-l-4 border-gray-400 shadow-sm">
+          <h3 class="text-lg font-bold text-gray-900 mb-3 "> Golden Rule</h3>
+          <p class="text-gray-700 leading-relaxed">
             In OpenProject, Epics, Stories, Bugs, and Tasks are all <strong>Work Packages</strong>. You differentiate them by changing their <strong>Type</strong>. The "Scrum" view is simply a specific way of filtering and visualizing these Work Packages.
-
           </p>
         </div>
       </section>
 
       <!-- Start Here -->
-      <section id="start-here">
-        <h2 class="text-2xl font-semibold mb-4">Start Here (10-Minute Setup)</h2>
-        <p class="text-gray-600 leading-relaxed">
-         This is a one-page checklist you can follow in order, even if you have never used OpenProject before (beyond having an account).
+      <section id="start-here" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Start Here (10-Minute Setup)</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          This is a one-page checklist you can follow in order, even if you have never used OpenProject before (beyond having an account).
         </p>
 
-        <div class="p-5 rounded-xl border bg-green-50">
-          <ol class="list-decimal list-inside space-y-2 text-gray-700">
-            <li>Open your project and confirm you can access Project settings in the left sidebar.</li>
-            <li>Go to Project settings → Modules.</li>
-            <li>Enable Backlogs and Taskboard, then click Save.</li>
-            <li>Go to Work packages and confirm you can see the green + Create button.</li>
-            <li>Create one Epic as your container for work.</li>
-            <li>Create two User Stories and set their Parent to the Epic.</li>
-            <li>Go to Backlogs and create one Sprint (a Version) named “Sprint 1” with dates.</li>
-            <li>Drag both User Stories from the Product Backlog into “Sprint 1”.</li>
-            <li>Open Taskboard, select “Sprint 1” from the dropdown, and confirm your stories appear.</li>
-            <li>Move one item across the workflow columns to confirm you can update progress during the sprint.</li>
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm">
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Open your project and confirm you can access Project settings in the left sidebar.</span></li>
+            <li><span class="text-gray-700">Go to Project settings → Modules.</span></li>
+            <li><span class="text-gray-700">Enable Backlogs and Taskboard, then click Save.</span></li>
+            <li><span class="text-gray-700">Go to Work packages and confirm you can see the green + Create button.</span></li>
+            <li><span class="text-gray-700">Create one Epic as your container for work.</span></li>
+            <li><span class="text-gray-700">Create two User Stories and set their Parent to the Epic.</span></li>
+            <li><span class="text-gray-700">Go to Backlogs and create one Sprint (a Version) named "Sprint 1" with dates.</span></li>
+            <li><span class="text-gray-700">Drag both User Stories from the Product Backlog into "Sprint 1".</span></li>
+            <li><span class="text-gray-700">Open Taskboard, select "Sprint 1" from the dropdown, and confirm your stories appear.</span></li>
+            <li><span class="text-gray-700">Move one item across the workflow columns to confirm you can update progress during the sprint.</span></li>
           </ol>
         </div>
       </section>
 
       <!-- Roles -->
-      <section id="roles">
-        <h2 class="text-2xl font-semibold mb-4">Roles Mapping</h2>
+      <section id="roles" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Roles Mapping</h2>
 
-        <div class="bg-white rounded-xl border shadow overflow-x-auto">
-          <table class="min-w-full text-sm">
+        <div class="bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden">
+          <table class="min-w-full">
             <thead class="bg-gray-100">
               <tr>
-                <th class="px-4 py-2 text-left">Scrum Role</th>
-                <th class="px-4 py-2 text-left">What they do in OpenProject</th>
-                <th class="px-4 py-2 text-left">Where in the UI</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Scrum Role</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">What they do in OpenProject</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Where in the UI</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-t">
-                <td class="px-4 py-2 font-medium">Product Owner</td>
-                <td class="px-4 py-2">Owns and prioritizes the Product Backlog. Writes Epics and User Stories, clarifies acceptance criteria, and decides what is ready for sprint planning.</td>
-                <td class="px-4 py-2">Work packages to create Epics/Stories; Backlogs to prioritize and assign stories to sprints.</td>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Product Owner</td>
+                <td class="px-6 py-4 text-gray-700">Owns and prioritizes the Product Backlog. Writes Epics and User Stories, clarifies acceptance criteria, and decides what is ready for sprint planning.</td>
+                <td class="px-6 py-4 text-gray-700">Work packages to create Epics/Stories; Backlogs to prioritize and assign stories to sprints.</td>
               </tr>
-              <tr class="border-t">
-                <td class="px-4 py-2 font-medium">Scrum Master</td>
-                <td class="px-4 py-2">Ensures the workflow is usable, supports sprint ceremonies, helps remove blockers, and ensures the team can operate smoothly in the tool.</td>
-                <td class="px-4 py-2">Project settings → Modules for setup; Backlogs and Taskboard for sprint execution.</td>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Scrum Master</td>
+                <td class="px-6 py-4 text-gray-700">Ensures the workflow is usable, supports sprint ceremonies, helps remove blockers, and ensures the team can operate smoothly in the tool.</td>
+                <td class="px-6 py-4 text-gray-700">Project settings → Modules for setup; Backlogs and Taskboard for sprint execution.</td>
               </tr>
-              <tr class="border-t">
-                <td class="px-4 py-2 font-medium">Developers</td>
-                <td class="px-4 py-2">Break stories into tasks, update status during the sprint, log remaining work if used, and close work packages when done.</td>
-                <td class="px-4 py-2">Taskboard for daily work; open individual work packages for details, assignments, and status updates.</td>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Developers</td>
+                <td class="px-6 py-4 text-gray-700">Break stories into tasks, update status during the sprint, log remaining work if used, and close work packages when done.</td>
+                <td class="px-6 py-4 text-gray-700">Taskboard for daily work; open individual work packages for details, assignments, and status updates.</td>
               </tr>
-              <tr class="border-t">
-                <td class="px-4 py-2 font-medium">Stakeholders</td>
-                <td class="px-4 py-2">Review progress and outcomes, provide feedback, and follow changes without needing to manage the backlog day-to-day.</td>
-                <td class="px-4 py-2">Work packages (filtered views), and sprint results in Backlogs depending on access.</td>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Stakeholders</td>
+                <td class="px-6 py-4 text-gray-700">Review progress and outcomes, provide feedback, and follow changes without needing to manage the backlog day-to-day.</td>
+                <td class="px-6 py-4 text-gray-700">Work packages (filtered views), and sprint results in Backlogs depending on access.</td>
               </tr>
             </tbody>
           </table>
@@ -80,185 +81,208 @@
       </section>
 
       <!-- Mini Example -->
-      <section id="mini-example">
-        <h2 class="text-2xl font-semibold mb-4 mt-2">Mini Example: Epic → Sprint → Done</h2>
+      <section id="mini-example" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Mini Example: Epic → Sprint → Done</h2>
 
-        <p class="text-gray-600 leading-relaxed">
-         This is a fully worked, minimal path you can replicate in a fresh project. The goal is not completeness; it is to get one coherent loop working end-to-end.
+        <p class="text-gray-600 leading-relaxed mb-8">
+          This is a fully worked, minimal path you can replicate in a fresh project. The goal is not completeness; it is to get one coherent loop working end-to-end.
         </p>
-        <div class="pl-2">
-        <h3 class="text-xl font-semibold mt-1 mb-2">Step A: Create one Epic</h3>
-        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
+
+        <div class="space-y-8">
+          <!-- Step A -->
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Step A: Create one Epic</h3>
+            <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
           <li>Go to Work Packages.</li>
           <li>Click + Create and select Epic.</li>
           <li>Set Subject to “User Authentication”.</li>
           <li>Write a short Description explaining the goal: users can sign up and log in securely.</li>
           <li>Save.</li>
-        </ol>
-        <h3 class="text-xl font-semibold mt-1 mb-2">Step B: Create two User Stories under that Epic</h3>
+            </ol>
+          </div>
+
+          <!-- Step B -->
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Step B: Create two User Stories under that Epic</h3>
         <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
           <li>Click + Create and select User Story.</li>
           <li>Subject: “As a visitor, I want to create an account, so that I can access protected features.”</li>
           <li>Set Story Points to 3 and set Parent to “User Authentication”. Save.</li>
           <li>Create a second story: “As a user, I want to log in, so that I can access my account.”</li>
           <li>Set Story Points to 2 and set Parent to “User Authentication”. Save.</li>
-        </ol>
+            </ol>
+          </div>
 
-        <h3 class="text-xl font-semibold mt-1 mb-2">Step C: Create one Sprint and pull the stories into it</h3>
+          <!-- Step C -->
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Step C: Create one Sprint and pull the stories into it</h3>
         <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
           <li>Go to Backlogs.</li>
           <li>Create a new Sprint (Version) named “Sprint 1” and set start/end dates.</li>
           <li>Drag both User Stories from the Product Backlog column into “Sprint 1”.</li>
-        </ol>
+            </ol>
+          </div>
 
-        <h3 class="text-xl font-semibold mt-1 mb-2">Step D: Move work to Done during the sprint</h3>
+          <!-- Step D -->
+          <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Step D: Move work to Done during the sprint</h3>
         <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
           <li>Go to Taskboard.</li>
           <li>Select “Sprint 1” in the Sprint dropdown.</li>
           <li>During execution, team members move cards across columns as status changes.</li>
           <li>When a story is completed and accepted, move it to the final status used by your workflow (often “Closed”).</li>
-        </ol>
-
-        <div class="mt-6 p-4 rounded-xl border bg-blue-50 text-blue-900">
-          <strong>What you should observe:</strong>
-          <p class="mt-2">
-            The Epic becomes your top-level container, the Sprint (Version) becomes the timebox, and the Taskboard becomes the day-to-day execution view. If the stories are correctly linked to the Epic using the Parent field, you preserve hierarchy and reporting across the project.
-
-          </p>
+            </ol>
+          </div>
         </div>
 
-      </div>
-
-
-
+        <div class="mt-8 p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm">
+          <strong>What you should observe:</strong>
+          <p class="mt-2 text-gray-700">
+            The Epic becomes your top-level container, the Sprint (Version) becomes the timebox, and the Taskboard becomes the day-to-day execution view. If the stories are correctly linked to the Epic using the Parent field, you preserve hierarchy and reporting across the project.
+          </p>
+        </div>
       </section>
 
       <!-- Config -->
-      <section id="config">
-        <h2 class="text-2xl font-semibold mb-4">Scrum Configuration</h2>
-        <p class="text-gray-600 leading-relaxed">
-         Before writing a single story, you must ensure your project is "Agile-aware". By default, OpenProject may hide the Backlogs module.
+      <section id="config" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Scrum Configuration</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Before writing a single story, you must ensure your project is "Agile-aware". By default, OpenProject may hide the Backlogs module.
         </p>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">Enable the Backlogs Module </h3>
-        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
-          <li>Go to your project's homepage.</li>
-          <li>Click Project Settings (sidebar) → Modules.</li>
-          <li>Ensure the checkbox for <strong>Backlogs</strong> is selected.</li>
-          <li>Ensure the checkbox for <strong>Taskboard</strong> is selected.</li>
-          <li>Click Save.</li>
-        </ol>
-
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Enable the Backlogs Module</h3>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Go to your project's homepage.</span></li>
+            <li><span class="text-gray-700">Click Project Settings (sidebar) → Modules.</span></li>
+            <li><span class="text-gray-700">Ensure the checkbox for <strong>Backlogs</strong> is selected.</span></li>
+            <li><span class="text-gray-700">Ensure the checkbox for <strong>Taskboard</strong> is selected.</span></li>
+            <li><span class="text-gray-700">Click Save.</span></li>
+          </ol>
+        </div>
       </section>
 
       <!-- Epics -->
-      <section id="epics">
-        <h2 class="text-2xl font-semibold mb-4">2. Defining Epics (The "Big Picture")</h2>
-        <p class="text-gray-600 leading-relaxed">
-         Epics serve as the container for your work. They represent large initiatives that cannot be completed in a single sprint.
+      <section id="epics" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-4 border-gray-300">2. Defining Epics (The "Big Picture")</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Epics serve as the container for your work. They represent large initiatives that cannot be completed in a single sprint.
         </p>
 
-        <h3 class="text-xl font-semibold mt-1 mb-2">How to Create an Epic</h3>
-        <p class="pl-4 text-gray-600 leading-relaxed">
-         You do not create Epics in the Backlog view; you create them in the standard Work Package list.
-        </p>
-        <ol class="list-decimal list-inside pl-4 space-y-2 text-gray-700">
-          <li>Click Work Packages in the sidebar.</li>
-          <li>Click the green + Create button in the top-right.</li>
-          <li>Select <strong>Epic</strong> from the dropdown list.</li>
-          <li><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</li>
-          <li><strong>Description:</strong> Describe the strategic value.</li>
-          <li><strong>Status:</strong> Set to "New" or "In Specification".</li>
-        </ol>
-        <img src="/op/GlobalCreate.png" alt="Creating a Work Package" >
-        <h1>Figure 1: The Global Create Button allows you to select "Epic" or "User Story".</h1>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">How to Create an Epic</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            You do not create Epics in the Backlog view; you create them in the standard Work Package list.
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Click Work Packages in the sidebar.</span></li>
+            <li><span class="text-gray-700">Click the green + Create button in the top-right.</span></li>
+            <li><span class="text-gray-700">Select <strong>Epic</strong> from the dropdown list.</span></li>
+            <li><span class="text-gray-700"><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</span></li>
+            <li><span class="text-gray-700"><strong>Description:</strong> Describe the strategic value.</span></li>
+            <li><span class="text-gray-700"><strong>Status:</strong> Set to "New" or "In Specification".</span></li>
+          </ol>
+        </div>
+        <img src="/op/GlobalCreate.png" alt="Creating a Work Package" class="w-full rounded-lg shadow-md mb-3">
+        <p class="text-center text-gray-600 italic">Figure 1: The Global Create Button allows you to select "Epic" or "User Story".</p>
       </section>
 
       <!-- Stories -->
-      <section id="stories">
-        <h2 class="text-2xl font-semibold mb-4">3. User Stories & The Hierarchy</h2>
-        <p class="text-gray-600 leading-relaxed">
-         This is the most critical step. If you do not link Stories to Epics, you will lose the ability to see progress bars and roadmaps.
+      <section id="stories" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-4 border-gray-300">3. User Stories & The Hierarchy</h2>
+        <p class="text-lg text-gray-900 font-semibold mb-6 p-4 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+           This is the most critical step. If you do not link Stories to Epics, you will lose the ability to see progress bars and roadmaps.
         </p>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">Creating a Story</h3>
-        
-        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
-          <li>Click + Create → <strong>User Story</strong>.</li>
-          <li><strong>Subject:</strong> Use the standard format: "As a [role], I want [feature], so that [benefit]."</li>
-          <li>Select Epic from the dropdown list.</li>
-          <li><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</li>
-          <li>Story Points: Enter your estimate (Fibonacci: 1, 2, 3, 5, 8...).</li>
-        </ol>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Creating a Story</h3>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Click + Create → <strong>User Story</strong>.</span></li>
+            <li><span class="text-gray-700"><strong>Subject:</strong> Use the standard format: "As a [role], I want [feature], so that [benefit]."</span></li>
+            <li><span class="text-gray-700">Select Epic from the dropdown list.</span></li>
+            <li><span class="text-gray-700"><strong>Subject:</strong> Enter a broad title (e.g., "New Checkout Experience").</span></li>
+            <li><span class="text-gray-700">Story Points: Enter your estimate (Fibonacci: 1, 2, 3, 5, 8...).</span></li>
+          </ol>
+        </div>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">Linking to the Parent (The Hierarchy)</h3>
-        <p class="pl-4 text-gray-600 leading-relaxed">
-         While creating (or editing) the User Story, you must create the Parent-Child relationship.
-        </p>
-        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
-          <li>In the User Story form, locate the <strong>Parent</strong> field.</li>
-          <li>Type the name of the Epic you created in Step 2.</li>
-          <li>Select Epic from the dropdown list.</li>
-          <li>Select the Epic from the autocomplete list.</li>
-          <li>Save the story.</li>
-        </ol>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Linking to the Parent (The Hierarchy)</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            While creating (or editing) the User Story, you must create the Parent-Child relationship.
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">In the User Story form, locate the <strong>Parent</strong> field.</span></li>
+            <li><span class="text-gray-700">Type the name of the Epic you created in Step 2.</span></li>
+            <li><span class="text-gray-700">Select Epic from the dropdown list.</span></li>
+            <li><span class="text-gray-700">Select the Epic from the autocomplete list.</span></li>
+            <li><span class="text-gray-700">Save the story.</span></li>
+          </ol>
+        </div>
 
-        <div class="mt-6 p-4 rounded-xl border bg-green-50 text-green-900">
-          <p>
-            <strong>Tip: </strong>In the Work Packages list view, your stories will now appear indented under the Epic. This visual hierarchy confirms the link is active.
+        <div class="p-6 rounded-lg bg-blue-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <h3 class="text-lg  font-bold text-gray-900 mb-3"> Tip</h3>
+          <p class="text-gray-700 leading-relaxed">
+            In the Work Packages list view, your stories will now appear indented under the Epic. This visual hierarchy confirms the link is active.
           </p>
         </div>
-                <img src="/op/fig2.png" alt="Creating a Work Package" >
 
-        <h1>Figure 2: The Hierarchy View. Note how child items are indented under the Parent Epic.</h1>
+        <img src="/op/fig2.png" alt="Creating a Work Package" class="w-full rounded-lg shadow-md mb-3">
+        <p class="text-center text-gray-600 italic">Figure 2: The Hierarchy View. Note how child items are indented under the Parent Epic.</p>
       </section>
 
       <!-- Backlogs -->
-      <section id="backlogs">
-        <h2 class="text-2xl font-semibold mb-4">4. Backlog Management (Sprint Planning)</h2>
-        <p class="text-gray-600 leading-relaxed">
-         Now that you have authored stories, it is time to plan a Sprint. In OpenProject, Sprints are managed in the <strong>Backlogs</strong> view.
+      <section id="backlogs" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-4 border-gray-300">4. Backlog Management (Sprint Planning)</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Now that you have authored stories, it is time to plan a Sprint. In OpenProject, Sprints are managed in the <strong>Backlogs</strong> view.
         </p>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">Understanding the View</h3>
-        <ul class="list-disc pl-9 space-y-2 text-gray-700">
-          <li><strong>Left Column (Product Backlog):</strong> This lists all open User Stories that are not yet assigned to a sprint.</li>
-          <li><strong>Right Column (Versions/Sprints):</strong> This lists your sprints. In OpenProject, a Sprint is technically a "Version".</li>
-        </ul>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Understanding the View</h3>
+          <ul class="list-disc list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700"><strong>Left Column (Product Backlog):</strong> This lists all open User Stories that are not yet assigned to a sprint.</span></li>
+            <li><span class="text-gray-700"><strong>Right Column (Versions/Sprints):</strong> This lists your sprints. In OpenProject, a Sprint is technically a "Version".</span></li>
+          </ul>
+        </div>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">Step-by-Step Planning</h3>
-        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
-          <li>Click Backlogs in the sidebar.</li>
-          <li>Create a new Sprint by clicking the arrow next to "Versions" on the right -> <strong>+ New Version.</strong></li>
-          <li>Name it (e.g., "Sprint 1") and set the dates.</li>
-          <li><strong>Drag and Drop:</strong> Click a User Story in the left column and drag it into the Sprint column on the right.</li>
-          <li>Observe the total <strong>Story Points</strong> calculating automatically at the top of the Sprint column to ensure you don't overcommit.</li>
-        </ol>
-        <img src="/op/fig3.png" alt="Creating a Work Package" >
-        <h1>Figure 3: Moving items from the Product Backlog to a Sprint backlog in the Backlogs view.</h1>
-        <p>imageee</p>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Step-by-Step Planning</h3>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Click Backlogs in the sidebar.</span></li>
+            <li><span class="text-gray-700">Create a new Sprint by clicking the arrow next to "Versions" on the right -> <strong>+ New Version.</strong></span></li>
+            <li><span class="text-gray-700">Name it (e.g., "Sprint 1") and set the dates.</span></li>
+            <li><span class="text-gray-700"><strong>Drag and Drop:</strong> Click a User Story in the left column and drag it into the Sprint column on the right.</span></li>
+            <li><span class="text-gray-700">Observe the total <strong>Story Points</strong> calculating automatically at the top of the Sprint column to ensure you don't overcommit.</span></li>
+          </ol>
+        </div>
+
+        <img src="/op/fig3.png" alt="Creating a Work Package" class="w-full rounded-lg shadow-md mb-3">
+        <p class="text-center text-gray-600 italic">Figure 3: Moving items from the Product Backlog to a Sprint backlog in the Backlogs view.</p>
       </section>
 
       <!-- Taskboard -->
-      <section id="taskboard">
-        <h2 class="text-2xl font-semibold mb-4">5. Execution: The Taskboard</h2>
-        <p class="text-gray-600 leading-relaxed">
-         Once the Sprint begins, the team leaves the "Backlogs" view and moves to the "Taskboard" for their daily standups.
+      <section id="taskboard" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-4 border-gray-300">5. Execution: The Taskboard</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Once the Sprint begins, the team leaves the "Backlogs" view and moves to the "Taskboard" for their daily standups.
         </p>
 
-        <h3 class="text-l font-semibold mt-1 mb-2">How to use the Taskboard</h3>
-        <p class="pl-4 text-gray-600 leading-relaxed">
-         You do not create Epics in the Backlog view; you create them in the standard Work Package list.
-        </p>
-        <ol class="list-decimal pl-9 space-y-2 text-gray-700">
-          <li>Click Taskboard in the sidebar.</li>
-          <li>Ensure the current Sprint is selected in the top-right dropdown.</li>
-          <li>You will see columns matching your workflow (e.g., New, In Progress, Closed).</li>
-          <li><strong>Action:</strong> Team members drag cards from left to right as they complete work.</li>
-          <li><strong>Burndown:</strong> Clicking the "Burndown" chart icon at the top right will show the team's velocity against the remaining days.</li>
-        </ol>
-        <img src="/op/fig4.png" alt="Creating a Work Package" >
-        <h1>Figure 4: The Taskboard View. This is your interactive digital whiteboard for the sprint.</h1>
+        <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">How to use the Taskboard</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            You do not create Epics in the Backlog view; you create them in the standard Work Package list.
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-gray-800 font-medium">
+            <li><span class="text-gray-700">Click Taskboard in the sidebar.</span></li>
+            <li><span class="text-gray-700">Ensure the current Sprint is selected in the top-right dropdown.</span></li>
+            <li><span class="text-gray-700">You will see columns matching your workflow (e.g., New, In Progress, Closed).</span></li>
+            <li><span class="text-gray-700"><strong>Action:</strong> Team members drag cards from left to right as they complete work.</span></li>
+            <li><span class="text-gray-700"><strong>Burndown:</strong> Clicking the "Burndown" chart icon at the top right will show the team's velocity against the remaining days.</span></li>
+          </ol>
+        </div>
+
+        <img src="/op/fig4.png" alt="Creating a Work Package" class="w-full rounded-lg shadow-md mb-3">
+        <p class="text-center text-gray-600 italic">Figure 4: The Taskboard View. This is your interactive digital whiteboard for the sprint.</p>
       </section>
 
     </div>

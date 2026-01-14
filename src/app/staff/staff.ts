@@ -36,7 +36,7 @@ export class Staff {
       name: 'Prof. G. Krishna Priya',
       role: 'Co Mentor',
       email: 'g_krishnapriya@cb.amrita.edu',
-      photoUrl: '/staff/krishnapriya_g.jpg',
+      photoUrl: '/staff/krishnapriya_g.jpeg',
       sectionCodes: ['CSE B', 'CSE F']
     },
   ];
@@ -83,38 +83,38 @@ export class Staff {
       name: 'E Aadithyaa',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22114@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/aadithyaa.jpeg'
     },
     {
       name: 'Shaun Joseph Sunny',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22443@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/shaun.jpeg'
     },
     {
       name: 'Sanyam Bhardwaj',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22044@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/sanyam.png'
     },
     {
       name: 'Sudharsan Vanamali',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22049@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/sudharsan.jpeg'
     },
     {
       name: 'R Dhaksana',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22037@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/dhaksana.jpeg'
     },
     
     {
       name: 'Revanth Singothu',
       role: 'Teaching Assistant',
       email: 'cb.en.u4cse22149@cb.students.amrita.edu',
-      photoUrl: '/staff/staff.jpg'
+      photoUrl: '/staff/revanth.jpeg'
     },
     // add more TAs
   ];
