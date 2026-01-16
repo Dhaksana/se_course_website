@@ -27,7 +27,7 @@ export class Staff {
   coordinators: StaffMember[] = [
     {
       name: 'Prof. Vedaj J Padman',
-      role: 'Course Coordinator',
+      role: 'Course Mentor',
       email: 'jp_vedaj@cb.amrita.edu',
       photoUrl: '/staff/vedaj_jp.jpeg',
       sectionCodes: ['CSE D']
