@@ -13,19 +13,9 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Lecture Notes</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-blue-100 rounded-lg border border-gray-200 shadow-md">
-          <h3 class="font-semibold text-gray-900 mb-2">Lecture 3: Introduction to Software Process Models</h3>
-          <a href="/resources/SE_03_Notes.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View PDF</a>
-        </div>
-
-        <div class="p-6 bg-blue-100 rounded-lg border border-gray-200 shadow-md">
-          <h3 class="font-semibold text-gray-900 mb-2">Lecture 4: Traditional Process Models</h3>
-          <a href="/resources/SE_04_Notes.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View PDF</a>
-        </div>
-
-        <div class="p-6 bg-blue-100 rounded-lg border border-gray-200 shadow-md">
-          <h3 class="font-semibold text-gray-900 mb-2">Lecture 5: More on Evolutionary Models</h3>
-          <a href="/resources/SE_05_Notes.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View PDF</a>
+        <div *ngFor="let note of lectureNotes" class="p-3 bg-blue-100 rounded-lg border border-gray-200 shadow-md">
+          <h3 class="font-semibold text-gray-900 mb-1">{{ note.title }}</h3>
+          <a [href]="note.link" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View PDF</a>
         </div>
       </div>
     </section>
@@ -34,10 +24,25 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Project Details</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-          <h3 class="font-semibold text-gray-900 mb-2">Project Guidelines</h3>
-          <a href="/resources/SE_Projects.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View Details</a>
+        <div *ngFor="let project of projects" class="p-3 bg-white rounded-lg border border-gray-200 shadow-md">
+          <h3 class="font-semibold text-gray-900 mb-1">{{ project.title }}</h3>
+          <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">View Details</a>
         </div>
+      </div>
+    </section>
+
+        <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Additional Resource Links</h2>
+      <div class="space-y-4 mt-6">
+
+        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+          <h3 class="font-semibold text-gray-900 mb-2">Git commands and setup</h3>
+          <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">Git Commands Cheat Sheet</a>
+          <br>
+          <a href="https://docs.github.com/en/repositories" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 underline text-sm font-medium">Repositories documentation</a>
+        </div>
+
+      
       </div>
     </section>
 

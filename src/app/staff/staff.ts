@@ -19,7 +19,6 @@ interface SectionInfo {
   selector: 'app-staff',
   imports: [CommonModule],
   templateUrl: './staff.html',
-  styleUrl: './staff.css',
 })
 export class Staff {
 
