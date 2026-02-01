@@ -34,11 +34,10 @@
         <div class="flex items-center justify-between cursor-pointer"
              (click)="toggleGuidelines()">
 
-          <a routerLink="/guidelines"
-             routerLinkActive="text-blue-600 font-semibold"
+          <p
              class="text-gray-700 hover:text-blue-600 font-medium">
             Guidelines
-          </a>
+      </p>
 
           <!-- Arrow -->
           <svg
@@ -55,10 +54,16 @@
         <div *ngIf="guidelinesOpen"
              class="ml-4 mt-2 space-y-2 border-l pl-3">
 
-          <a routerLink="/guidelines/op-scrum"
+          <a routerLink="/guidelines"
              routerLinkActive="text-blue-600 font-semibold"
              class="block text-sm text-gray-600 hover:text-blue-600 cursor-pointer">
             OP Scrum Guide
+          </a>
+
+          <a routerLink="/assignment-submission"
+             routerLinkActive="text-blue-600 font-semibold"
+             class="block text-sm text-gray-600 hover:text-blue-600 cursor-pointer">
+            Assignment Submission
           </a>
 
         </div>
