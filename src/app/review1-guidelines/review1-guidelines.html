@@ -13,8 +13,8 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">OpenProject</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-          <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <div class="p-6 pl-10 bg-white rounded-lg border border-gray-200 shadow-md">
+          <ul class="list-disc  space-y-2 text-gray-700">
             <li>The OpenProject project must contain all the Epics, User Stories and Tasks</li>
             <li>Tasks must have appropriate priority and Story Points estimated</li>
             <li>A backlog must be created for Sprint 1 with the corresponding tasks</li>
@@ -30,8 +30,8 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">GitHub & Codebase</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-          <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <div class="p-6 pl-10 bg-white rounded-lg border border-gray-200 shadow-md">
+          <ul class="list-disc space-y-2 text-gray-700">
             <li>It is preferable to have a loosely coupled backend and frontend, in separate repositories. Monorepos must have appropriate justification, as separate repositories simplifies developments and ensures a cleaner commit history.</li>
             <li>Ensure that all team members commit code regularly to GitHub.</li>
             <li>The codebase must have comments where appropriate. Developer documentation must be present in the README file. API Documentation is also necessary.</li>
@@ -44,7 +44,7 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Diagrams</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+        <div class="p-6 pl-10 bg-white rounded-lg border border-gray-200 shadow-md">
           <p class="text-gray-700 mb-4">The following diagrams are compulsory for all teams:</p>
           <ol class="list-decimal list-inside space-y-2 text-gray-700">
             <li>Use Case Diagram</li>
@@ -61,9 +61,9 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">DevOps Strategy</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+        <div class="p-6 pl-10 bg-white rounded-lg border border-gray-200 shadow-md">
           <p class="text-gray-700 mb-4">The DevOps strategy must include a diagram and a document. The strategy must identify the following for each of the components in the project:</p>
-          <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <ul class="list-disc space-y-2 text-gray-700 ml-4">
             <li>corresponding source code repos</li>
             <li>the location where the component is deployed</li>
             <li>the tests or checks to be performed before deployment</li>
@@ -77,8 +77,55 @@
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Testing Strategy</h2>
       <div class="space-y-4 mt-6">
-        <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+        <div class="p-6 pl-10 bg-white rounded-lg border border-gray-200 shadow-md">
           <p class="text-gray-700">The testing strategy must specify how each component of the project will be tested. This includes the kinds of tests to be written, as well as the properties for which each component will be tested. All tools, platforms, libraries and frameworks that will be used for testing must be specified.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marks Distribution Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">Sprint 1 - Marks Distribution</h2>
+      <div class="space-y-4 mt-6">
+        <div class="p-6 bg-blue-100 rounded-lg border border-gray-200 shadow-md">
+          <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+            <table class="min-w-full">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Criteria</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Marks</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 text-sm font-medium text-gray-900">Codebase</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">Unit tests, repo organization (multi repo required), commits (all team members), code documentation</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">10</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 text-sm font-medium text-gray-900">Deliverables</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">50% completion - backend API calls demo, frontend UI</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">10</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 text-sm font-medium text-gray-900">Diagrams and Docs</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">Architecture, Sequence, Use Case ERD/Schema, Dev Docs (GitHub readme)</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">5</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 text-sm font-medium text-gray-900">OpenProject Updating</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">Project tasks, milestones, and meeting documentation</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">5</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 text-sm font-bold text-gray-900">TOTAL</td>
+                  <td class="px-6 py-4 text-sm text-gray-700"></td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
