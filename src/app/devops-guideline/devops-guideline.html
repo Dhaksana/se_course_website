@@ -1,0 +1,420 @@
+  <main id="main-content">
+    <div class="max-w-5xl mx-auto">
+
+      <section id="intro" class="mb-12">
+        <div class="border-b-2 border-gray-300 pb-4 mb-8">
+          <h1 class="text-4xl font-bold text-gray-900 mb-3">DevOps and Automation</h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Modern software engineering rarely fails due to a single bug in code alone. Systems fail because
+            of mismatched environments, fragile deployments, inconsistent configurations, incomplete testing,
+            unclear ownership, and slow feedback loops. Historically, many organizations treated development
+            and operations as separate worlds: developers wrote features, and operations teams “made it run.”
+            This rigid handoff created delays, instability, and blame-driven cultures.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700 leading-relaxed"><strong><em>DevOps</em></strong> is a socio-technical approach that unifies software development and system operations
+            through shared ownership, continuous feedback, and automation, with the goal of delivering changes
+            rapidly while maintaining reliability and security.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          DevOps is not a toolchain. It is a way of engineering and organizing work: teams take responsibility
+          for the full lifecycle of software—from planning and implementation to deployment, monitoring, and
+          incident response. Automation is the enabling mechanism, but the foundation is cultural: collaboration,
+          transparency, and responsibility for outcomes.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">The “Shift Left” Paradigm</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          “Shift Left” means moving quality, security, and operability concerns earlier in the lifecycle.
+          Instead of discovering integration failures at the end, teams validate early using automated builds,
+          automated tests, and reproducible environments. A key idea is to encode system behavior as executable
+          specification, whether through tests, infrastructure definitions, or deployment descriptors.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed mb-6 bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
+          Example: Instead of manually configuring a server during the final week of a project, define the environment
+          with <span class="font-semibold">Infrastructure as Code (IaC)</span>, validate it in CI, and deploy consistently to staging and production.
+        </p>
+
+        <figure class="max-w-2xl mx-auto mb-6 text-center">
+          <img src="/devop/DevOps_Infinity_Loop.png" alt="DevOps Infinity Loop illustrating continuous integration and delivery" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 1:</strong> The DevOps infinite lifecycle illustrating continuous planning, building, continuous integration, deployment, operation, and feedback.</p>
+        </figure>
+
+        <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm">
+          <strong>Key takeaway:</strong>
+          <p class="mt-2 text-gray-700">Do not make the mistake of assuming that DevOps is just using Docker and GitHub Actions. Remember, it is an approach that aligns culture, processes, and automation to reduce lead time while improving reliability. Explore tools that best fit your project needs.</p>
+        </div>
+      </section>
+
+      <section id="ci-def" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">1. Continuous Integration</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700"> <strong><em>Continuous Integration</em></strong> is the practice of integrating code changes frequently into a shared branch, where each integration triggers an automated build and test process to detect problems early.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">CI exists to prevent “integration hell”—the scenario where multiple developers work in isolation and later discover their changes conflict. CI shortens feedback loops: if a change breaks the build, violates formatting rules, or fails tests, it is discovered immediately rather than days later.</p>
+
+        <p class="font-semibold text-gray-900 mb-2">Core properties of CI</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-4">
+          <li><strong>Frequent merges:</strong> Changes are integrated often enough that conflicts remain small.</li>
+          <li><strong>Automated builds:</strong> The system compiles/packages deterministically in a clean environment.</li>
+          <li><strong>Automated tests:</strong> At minimum, unit tests run; ideally, fast integration tests also run.</li>
+          <li><strong>Fast feedback:</strong> Pipelines should be optimized so teams get results quickly.</li>
+        </ul>
+
+        <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">CI anti-patterns</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>CI is configured but tests are missing or meaningless.</li>
+            <li>CI runs only on weekends or just before submission (not continuous).</li>
+            <li>Pipelines fail frequently due to flaky tests, causing teams to ignore results.</li>
+          </ul>
+        </div>
+
+        <figure class="max-w-2xl mx-auto mb-6 text-center">
+          <img src="/devop/CILoop.png" alt="Continuous Integration loop" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 2:</strong> Continuous Integration (CI) feedback loop illustrating the sequence of developer commit, automated build, automated testing, rapid feedback, and corrective action through fix or merge.</p>
+        </figure>
+
+        <p class="font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Martin Fowler: Continuous Integration</a></li>
+          <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GitHub Actions documentation</a></li>
+          <li><a href="https://woodpecker-ci.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Woodpecker CI (self-hosted alternative)</a></li>
+        </ul>
+      </section>
+
+      <section id="cd-def" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">2. Continuous Delivery and Continuous Deployment</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700"><strong><em>Continuous Delivery</em></strong> is the practice of keeping software in a deployable state at all times through automated build, test, and release processes, such that deployment can be performed reliably and repeatedly on demand. <strong><em>Continuous Deployment</em></strong> extends Continuous Delivery by automatically releasing every change that passes the pipeline to production without manual approval.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">If CI ensures “the code works,” CD ensures “the release works.” CD addresses the broader release process: artifact creation, configuration, environment provisioning, database migration handling, and deployment orchestration. The discipline in CD is to treat releases as routine, predictable events rather than high-stress, manual ceremonies.</p>
+
+        <p class="font-semibold text-gray-900 mb-2">Continuous Delivery vs Continuous Deployment</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-4">
+          <li><strong>Delivery:</strong> Every successful build is deployable; release may be a manual business decision.</li>
+          <li><strong>Deployment:</strong> Every successful build is released automatically; requires mature testing and monitoring.</li>
+        </ul>
+
+        <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 shadow-sm mb-6">
+          <strong>Key idea:</strong>
+          <p class="mt-2 text-gray-700">If you cannot deploy safely on a normal weekday afternoon, you do not truly have a reliable delivery process.</p>
+        </div>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/CICDEndtoEnd.png" alt="CI/CD pipeline" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 3:</strong> CI/CD pipeline showing the automated flow from commit → build → unit tests → integration tests → security checks → staging deploy → production deploy.</p>
+        </figure>
+
+        <p class="font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://continuousdelivery.com/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Continuous Delivery (concepts and patterns)</a></li>
+          <li><a href="https://martinfowler.com/bliki/DeploymentPipeline.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Martin Fowler: Deployment Pipeline</a></li>
+        </ul>
+      </section>
+
+      <section id="automation-discipline" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">3. Automation as an Engineering Discipline</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700"><strong><em>Automation</em></strong> in Software Engineering is the systematic design and use of tools, processes, and executable specifications to perform recurring engineering and operational tasks with minimal human intervention, while preserving correctness, repeatability, and reliability.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">Automation is not “writing scripts.” It is an engineering activity: you define what should happen, under what conditions it should happen, how failures should be detected, and how the system should recover. High-quality automation reduces human error and accelerates feedback. Poor automation increases fragility by making failures happen faster and on a larger scale.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">3.1 Scope and role of automation across the lifecycle</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Automation exists throughout the lifecycle. In development, it enforces standards and catches defects early. In integration, it validates builds and dependencies. In deployment, it creates repeatable release processes. In operations, it enables scaling, recovery, and routine maintenance. The primary value is not convenience—it is <strong>repeatability</strong> and <strong>predictable outcomes</strong>.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">3.2 Layers of automation</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">A practical way to understand automation is as layers, each with increasing operational impact:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><strong>Build automation:</strong> compilation, packaging, artifact generation, dependency resolution.</li>
+          <li><strong>Test automation:</strong> unit tests, integration tests, regression tests, performance checks.</li>
+          <li><strong>Deployment automation:</strong> rollout orchestration, environment configuration, release promotion.</li>
+          <li><strong>Infrastructure automation:</strong> declarative provisioning of compute/storage/network resources.</li>
+          <li><strong>Operational automation:</strong> backups, scaling, log rotation, cleanup, failover routines.</li>
+        </ul>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/LayeredView.png" alt="Layered view of automation" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 4:</strong> Layered view of automation across the software lifecycle (Build → Test → Deploy → Infra → Ops).</p>
+        </figure>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">3.3 What to automate and what not to automate?</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Automation is most effective for tasks that are <strong>repetitive, deterministic, high-frequency, and error-prone when done manually</strong>. However, some tasks require human judgment, especially when ambiguity is high or consequences are irreversible.</p>
+
+        <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm mb-6">
+          <strong>Engineering principle:</strong>
+          <p class="mt-2 text-gray-700">Never automate a process you do not understand. If the manual process is unstable or unclear, automation will amplify its failures rather than fix them.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">3.4 Trade-offs: reliability, cost, and brittleness</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Automation has costs: time to build it, time to maintain it, and time to debug it. Over-automation can lead to brittle pipelines and “false confidence” if tests are weak. Good automation is tested like product code, versioned, reviewed, and monitored.</p>
+
+        <p class="font-semibold text-gray-900 mb-2">Example</p>
+        <p class="text-gray-600 leading-relaxed mb-4">A pipeline that automatically deploys code after unit tests pass may still be unsafe if database migrations are not validated. A more responsible approach is a gated pipeline: unit tests + schema compatibility checks + staging smoke tests before production rollout.</p>
+
+        <p class="font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://sre.google/sre-book/automation-at-google/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Google SRE Book: Automation</a></li>
+          <li><a href="https://martinfowler.com/bliki/InfrastructureAsCode.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Martin Fowler: Infrastructure as Code</a></li>
+          <li><a href="https://opentofu.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenTofu (IaC tool, Terraform-compatible)</a></li>
+          <li><a href="https://www.ansible.com/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Ansible (configuration automation)</a></li>
+        </ul>
+      </section>
+
+      <section id="release-safety" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">4. Release Safety, Failure, and Recovery</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700"><strong><em>Failure:</em></strong> A deviation of system behavior from its intended or expected function. 
+            <br>
+            <strong><em>Release Safety:</em></strong> The degree to which a deployment minimizes the risk of causing system-wide failure. 
+            <br>
+            <strong><em>Recovery:</em></strong> The process of restoring a system to an acceptable operational state after failure.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">In complex systems, failure is not an exception—it is an expected mode of operation. Engineering maturity is measured not by “never failing,” but by how safely you deploy changes, how quickly you detect issues, and how effectively you recover.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">4.1 Types of Failures</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Failures can be classified by where they arise and how they manifest:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><strong>Functional failures:</strong> incorrect outputs, broken business rules, data corruption.</li>
+          <li><strong>Performance failures:</strong> high latency, timeouts, request queuing, degraded throughput.</li>
+          <li><strong>Resource failures:</strong> CPU exhaustion, memory leaks, disk full, connection pool exhaustion.</li>
+          <li><strong>Dependency failures:</strong> third-party APIs down, DNS issues, database outages, message queue backlogs.</li>
+          <li><strong>Configuration failures:</strong> environment drift, wrong feature flags, missing secrets, incorrect routing.</li>
+        </ul>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/SoftwareFailures.png" alt="Classification of software system failures" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 5:</strong> Classification of software system failures with representative symptoms and typical root causes.</p>
+        </figure>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">4.2 Release Safety Mechanisms - An engineer's means to reduce blast radius</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Release safety is about limiting the blast radius of change and creating safe recovery options:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><strong>Environment parity:</strong> Make dev/staging/prod behavior similar to reduce “works on my machine.”</li>
+          <li><strong>Feature flags:</strong> Deploy code but activate features gradually or for subsets of users.</li>
+          <li><strong>Blue–green deployments:</strong> Maintain two environments; switch traffic only when the new version is validated.</li>
+          <li><strong>Canary releases:</strong> Release to a small subset of traffic first; expand only if metrics remain healthy.</li>
+          <li><strong>Rollback strategy:</strong> Define how to revert safely (code + config + data considerations).</li>
+        </ul>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/BGCanary.png" alt="Blue–green vs canary deployment strategies" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 6:</strong> Blue–green vs canary deployment strategies, illustrating traffic routing, validation stages, and rollback points for safe release management.</p>
+        </figure>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">4.3 Recovery metrics: MTTD and MTTR</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-4">
+          <li><span class="font-semibold">MTTD</span> (Mean Time to Detect): how quickly a failure is noticed.</li>
+          <li><span class="font-semibold">MTTR</span> (Mean Time to Recover): how quickly service is restored.</li>
+        </ul>
+
+        <p class="text-gray-600 leading-relaxed mb-4">Good teams reduce both metrics using observability, clear runbooks, and automation. In many real systems, reducing MTTR is more impactful than trying to eliminate all failures, because complex systems will fail eventually.</p>
+
+        <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm mb-6">
+          <strong>Textbook principle:</strong>
+          <p class="mt-2 text-gray-700">“Design for recovery.” If recovery is not designed, it becomes improvisation.</p>
+        </div>
+
+        <p class="font-semibold text-gray-900 mb-2">Example</p>
+        <p class="text-gray-600 leading-relaxed mb-6">A service deploy causes error rate to rise sharply. A responsible pipeline detects this through automated health checks and triggers an automated rollback (or traffic shift) before the majority of users are impacted. This is designed recovery, not reactive firefighting.</p>
+
+        <p class="font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://sre.google/sre-book/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Google SRE Book (reliability engineering concepts)</a></li>
+          <li><a href="https://martinfowler.com/bliki/BlueGreenDeployment.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Martin Fowler: Blue–Green Deployment</a></li>
+          <li><a href="https://martinfowler.com/bliki/CanaryRelease.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Martin Fowler: Canary Release</a></li>
+          <li><a href="https://principlesofchaos.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Principles of Chaos Engineering (conceptual reading)</a></li>
+        </ul>
+      </section>
+
+      <section id="devsecops" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">5. Security and DevSecOps Fundamentals</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700"><strong><em>DevSecOps</em></strong> is an extension of DevOps that integrates security engineering practices throughout the software lifecycle, ensuring security is treated as a shared, continuous responsibility rather than a final verification step.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">Security is not a feature you add at the end. It is a system property that depends on architecture, dependencies, configuration, and operational behavior. In modern development, the attack surface expands rapidly: third-party packages, cloud services, container images, APIs, and infrastructure configurations all become part of the security boundary.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">5.1 Why security must “shift left”</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Traditional security audits performed near the end of development fail because vulnerabilities originate during design and coding. Late fixes are expensive and often incomplete. DevSecOps shifts security earlier by embedding security checks into CI/CD and by encouraging threat-aware design decisions.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">5.2 Core Security Concerns</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><strong>Secrets management:</strong> prevent credential leakage (tokens, API keys, database passwords).</li>
+          <li><strong>Dependency security:</strong> detect vulnerable packages and supply-chain risks.</li>
+          <li><strong>Access control:</strong> enforce least privilege, avoid overpowered roles and keys.</li>
+          <li><strong>Input validation:</strong> protect against injection and untrusted input paths.</li>
+          <li><strong>Infrastructure hardening:</strong> secure defaults, restrict network exposure, patch regularly.</li>
+        </ul>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/ThreatsandConrols.png" alt="Attack surface map" class="w-full rounded-lg shadow-md">
+          <p class="text-center text-gray-600 italic mt-3"><strong>Figure 7:</strong> Swimlane view of a secure CI/CD pipeline from developer to production, highlighting key threats and controls.</p>
+        </figure>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">5.3 Security automation in CI/CD</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">Security checks can be automated through:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-8">
+          <li><strong>SAST (Static analysis):</strong> finds risky patterns in source code before runtime.</li>
+          <li><strong>Dependency scanning:</strong> detects known vulnerabilities in libraries and transitive dependencies.</li>
+          <li><strong>Secrets scanning:</strong> detects leaked keys in commits and pull requests.</li>
+          <li><strong>Container/image scanning:</strong> detects vulnerabilities in base images and OS packages.</li>
+          <li><strong>Policy gates:</strong> blocks deployment if critical issues are found.</li>
+        </ul>
+
+        <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm mb-6">
+          <strong>Common misconception:</strong>
+          <p class="mt-2 text-gray-700">"We used GitHub Secrets, so the system is secure." Secrets management is only one control. Security requires continuous validation, least privilege, and threat awareness.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">5.4 The Missing Human Step - Threat Modeling</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Automation does not replace engineering judgment. Threat modeling is a structured way to identify "what can go wrong,"
+          "who might exploit it," and "how to reduce risk." Even a lightweight threat model (assets, actors, entry points, abuse cases)
+          improves design quality.
+        </p>
+
+        <p class="font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OWASP Top 10 (web application risks)</a></li>
+          <li><a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OWASP Cheat Sheet Series (practical defenses)</a></li>
+          <li><a href="https://docs.github.com/en/code-security" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GitHub Code Security (SAST, secrets scanning, dependency scanning)</a></li>
+          <li><a href="https://slsa.dev/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">SLSA (Supply-chain Levels for Software Artifacts)</a></li>
+        </ul>
+      </section>
+
+      <section id="stack" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">6. Industry Standards & Tool Evaluation</h2>
+
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Tool selection is not a popularity contest. Engineers evaluate tools based on system architecture, team constraints,
+          operational needs, and security requirements. You should be able to justify both the chosen tools and the rejected alternatives.
+        </p>
+
+        <div class="mb-4 bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden">
+          <table class="min-w-full">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Category</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Industry Standard</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Modern / Niche Solution</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Selection Criteria</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">CI/CD Orchestration</td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://github.com/features/actions" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GitHub Actions</a></td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://woodpecker-ci.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Woodpecker CI</a></td>
+                <td class="px-6 py-4 text-gray-700">Choose hosted integration for convenience; choose self-hosted for control and privacy.</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Environment Portability</td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://www.docker.com/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Docker</a></td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://podman.io/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Podman</a></td>
+                <td class="px-6 py-4 text-gray-700">Docker is widely adopted; Podman is daemonless and supports rootless execution on Linux.</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">IaC / Provisioning</td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://www.terraform.io/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Terraform</a></td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://opentofu.org/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenTofu</a></td>
+                <td class="px-6 py-4 text-gray-700">Evaluate ecosystem support, state management needs, and governance constraints.</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Cloud Deployment</td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://aws.amazon.com/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">AWS</a> / <a href="https://cloud.google.com/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GCP</a></td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://railway.app/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Railway</a> / <a href="https://fly.io/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Fly.io</a></td>
+                <td class="px-6 py-4 text-gray-700">Use enterprise clouds for complex systems; use developer platforms for rapid deployment and iteration.</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-semibold text-gray-900">Security Scanning</td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://docs.github.com/en/code-security" target="_blank" rel="noopener" class="text-blue-600 hover:underline">GitHub Advanced Security</a></td>
+                <td class="px-6 py-4 text-gray-700"><a href="https://semgrep.dev/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Semgrep</a></td>
+                <td class="px-6 py-4 text-gray-700">Compare depth of rules, ease of adoption, false positives, and CI integration.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-gray-400 shadow-sm">
+          <strong>Expectation:</strong>
+          <p class="mt-2 text-gray-700">Every major tool you choose needs to be justified. Think about what alternatives you considered and why a specific solution was chosen over the others.</p>
+        </div>
+      </section>
+
+      <section id="observability" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">7. Monitoring and Observability</h2>
+
+        <div class="p-6 rounded-lg bg-green-100 border-l-4 border-gray-400 shadow-sm mb-6">
+          <p class="text-gray-700 leading-relaxed"><strong><em>Observability</em></strong> is the degree to which the internal state of a system can be inferred from its external outputs, typically through logs, metrics, and traces.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Monitoring answers “is it broken?” Observability answers “why is it broken?” A system can be “up” and still be unusable due to high latency, partial failures, or resource saturation. Observability transforms operations from guesswork into diagnosis.
+        </p>
+
+        <p class="text-lg font-semibold text-gray-900 mb-2">Core signals</p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          You should identify and justify metrics relevant to their system:
+          <span class="inline-block bg-gray-100 text-gray-800 text-sm px-2 py-0.5 rounded mr-2">Latency</span> (response time),
+          <span class="inline-block bg-gray-100 text-gray-800 text-sm px-2 py-0.5 rounded mr-2">Traffic</span> (demand),
+          <span class="inline-block bg-gray-100 text-gray-800 text-sm px-2 py-0.5 rounded mr-2">Errors</span> (rate of failure),
+          <span class="inline-block bg-gray-100 text-gray-800 text-sm px-2 py-0.5 rounded">Saturation</span> (resource utilization).
+        </p>
+
+        <figure class="max-w-3xl mx-auto mb-6 text-center">
+          <img src="/devop/ObservabilityStack.png" alt="Observability stack showing metrics, logs, and traces feeding an observability platform, dashboards, alerts, incident response, and recovery actions" class="w-full rounded-lg shadow-md">
+          <figcaption class="text-center text-gray-600 italic mt-3"> <strong>Figure 8:</strong> Observability stack where metrics, logs, and traces feed dashboards and alerts, enabling incident response and recovery actions.</figcaption>
+        </figure>
+
+        <p class="text-lg font-semibold text-gray-900 mb-2">Suggested references</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><a href="https://opentelemetry.io/docs/concepts/observability-primer/"  target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenTelemetry: Observability Primer</a></li>
+          <li><a href="https://prometheus.io/docs/introduction/overview/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Prometheus: Overview</a></li>
+          <li><a href="https://grafana.com/docs/grafana/latest/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Grafana: Documentation</a></li>
+        </ul>
+      </section>
+
+      <section id="checklist" class="mb-12">
+        <h2 class="text-3xl font-bold mb-2 text-gray-900 pb-3 border-b-2 border-gray-300">8. Project Strategy Requirements</h2>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A DevOps strategy document must demonstrate reasoning. It should not merely list tools, but explain the flow of changes from commit to production, the validation gates, security controls, and the recovery plan.
+        </p>
+
+        <ul class="list-disc list-inside space-y-2 text-gray-800 mb-6">
+          <li><strong>Repository isolation:</strong> justify monorepo vs multiple repos based on coupling and deployment needs.</li>
+          <li><strong>Secrets management:</strong> no hardcoded keys; explain secret storage and rotation assumptions.</li>
+          <li><strong>Testing gates:</strong> specify what must pass before a release is promoted (and why).</li>
+          <li><strong>Release safety:</strong> describe rollout strategy (flags / canary / blue–green) and rollback plan.</li>
+          <li><strong>Security gates:</strong> specify which scans run in CI and what blocks deployment.</li>
+          <li><strong>Observability plan:</strong> map key metrics to detection and recovery actions (MTTD/MTTR).</li>
+          <li><strong>Automation boundaries:</strong> what is automated, what is manual, and why.</li>
+        </ul>
+
+        <div class="p-6 rounded-lg  border-l-4 bg-blue-100  border-gray-400 shadow-sm">
+          <strong>Be prepared to explain:</strong>
+          <p class="mt-2 text-gray-700">“What happens if your deployment causes failures in production?”</p>
+        </div>
+      </section>
+
+      <footer class="mt-24 py-8 border-t border-gray-200 text-sm text-gray-400">
+        Standalone reference for DevOps, CI/CD, automation, release safety, recovery, and DevSecOps fundamentals.
+        External links are provided for deeper study and tool exploration.
+      </footer>
+
+    </div>
+  </main>

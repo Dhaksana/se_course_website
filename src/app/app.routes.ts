@@ -6,6 +6,8 @@ import {Home} from './home/home';
 import {Guidelines} from './guidelines/guidelines';
 import {Review1Guidelines} from './review1-guidelines/review1-guidelines';
 import {AssignmentSubmission} from './assignment-submission/assignment-submission';
+import {DevopsGuideline} from './devops-guideline/devops-guideline';
+
 
 export const routes: Routes = [
     {path:'', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +17,7 @@ export const routes: Routes = [
   { path: 'guidelines', component: Guidelines },
   { path: 'review1-guidelines', component: Review1Guidelines },
   { path: 'assignment-submission', component: AssignmentSubmission },
-
+  { path: 'devops-guidelines', component: DevopsGuideline },
 ];
 
 @NgModule({
