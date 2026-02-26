@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary | SE Design</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        .glossary-filter {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(var(--border-color-rgb), 0.5);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(var(--surface-color-rgb), 0.5);
+            color: var(--text-primary);
+        }
+
+        .term-chip {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(var(--accent-glow), 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 999px;
+            margin: 0 0.5rem 0.5rem 0;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .term-chip:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .term-item {
+            border-bottom: 1px solid rgba(var(--border-color-rgb), 0.3);
+            padding: 1rem 0;
+        }
+
+        .term-item h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .term-item p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">SE Design</div>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lecture10.html">Lecture 10</a></li>
+                <li><a href="lecture11.html">Lecture 11</a></li>
+                <li><a href="lecture12.html">Lecture 12</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="glossary.html" class="active">Glossary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="flex-direction: column; max-width: 800px; padding-top: 4rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <img src="assets/prof_owl.png" alt="Professor Owl"
+                style="width: 80px; animation: float 4s ease-in-out infinite;">
+            <h1 style="margin: 0;">Glossary of Terms</h1>
+        </div>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">Confused by the buzzwords?
+            Don't worry, even we had to look these up! Here's your cheat sheet. 📖</p>
+
+        <div>
+            <div class="term-chip"
+                onclick="document.getElementById('g-filter').value='Abstraction'; document.getElementById('g-filter').dispatchEvent(new Event('input'))">
+                Abstraction</div>
+            <div class="term-chip"
+                onclick="document.getElementById('g-filter').value='Cohesion'; document.getElementById('g-filter').dispatchEvent(new Event('input'))">
+                Cohesion</div>
+            <div class="term-chip"
+                onclick="document.getElementById('g-filter').value='Coupling'; document.getElementById('g-filter').dispatchEvent(new Event('input'))">
+                Coupling</div>
+            <div class="term-chip"
+                onclick="document.getElementById('g-filter').value='Pattern'; document.getElementById('g-filter').dispatchEvent(new Event('input'))">
+                Pattern</div>
+            <div class="term-chip"
+                onclick="document.getElementById('g-filter').value='Refactoring'; document.getElementById('g-filter').dispatchEvent(new Event('input'))">
+                Refactoring</div>
+        </div>
+
+        <input type="text" id="g-filter" class="glossary-filter" placeholder="Quick find term..."
+            aria-label="Filter terms">
+
+        <div id="glossary-list" class="glass-panel" style="padding: 1.5rem;">
+            <div class="term-item">
+                <h3>Abstraction</h3>
+                <p>The process of conceptualizing a system by focusing on the most important aspects while ignoring
+                    distracting implementation details.</p>
+            </div>
+            <div class="term-item">
+                <h3>Architecture</h3>
+                <p>The overall structure of the software system, defining the fundamental subsystems, relationships, and
+                    deployment patterns.</p>
+            </div>
+            <div class="term-item">
+                <h3>Cohesion</h3>
+                <p>A qualitative indication of how strongly related the internal responsibilities of a single module
+                    are. High cohesion is desirable.</p>
+            </div>
+            <div class="term-item">
+                <h3>Coupling</h3>
+                <p>A qualitative indication of the degree to which a module relies on other modules. Low coupling is
+                    desirable.</p>
+            </div>
+            <div class="term-item">
+                <h3>Design Pattern</h3>
+                <p>A proven, documented solution to a recurring design problem in a specific context.</p>
+            </div>
+            <div class="term-item">
+                <h3>Refactoring</h3>
+                <p>A reorganization technique that simplifies the design (or code) of a component without changing its
+                    external behavior or semantics.</p>
+            </div>
+            <div class="term-item">
+                <h3>Separation of Concerns</h3>
+                <p>A design principle stating that a complex problem can be handled more easily if it is subdivided into
+                    pieces that can each be solved and/or updated independently.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/app.js"></script>
+    <script>
+        document.getElementById('g-filter').addEventListener('input', (e) => {
+            const q = e.target.value.toLowerCase();
+            document.querySelectorAll('.term-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(q)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

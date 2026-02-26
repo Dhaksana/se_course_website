@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tools | SE Design</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        .explorer-btn {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            border: var(--border-width) solid var(--border-color);
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .explorer-btn:hover,
+        .explorer-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .tool-section {
+            display: none;
+            margin-top: 1.5rem;
+        }
+
+        .tool-section.active {
+            display: block;
+            animation: fadein 0.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quiz-question {
+            margin-bottom: 2rem;
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-option {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--surface-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quiz-option:hover {
+            background: rgba(212, 53, 60, 0.05);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quiz-option.correct {
+            background: rgba(25, 135, 84, 0.05);
+            border-color: var(--success);
+            color: var(--success);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quiz-option.wrong {
+            background: rgba(220, 53, 69, 0.05);
+            border-color: var(--error);
+            color: var(--error);
+            text-decoration: line-through;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            font-weight: 500;
+            display: none;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">SE Design</div>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lecture10.html">Lecture 10</a></li>
+                <li><a href="lecture11.html">Lecture 11</a></li>
+                <li><a href="lecture12.html">Lecture 12</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="search.html" aria-label="Search">🔍</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main style="max-width: 900px; margin: 0 auto; width: 100%;">
+            <h1>Interactive Revision Tools</h1>
+
+            <section class="glass-panel reveal">
+                <h2>1. Design Model Explorer</h2>
+                <p>Click on one of the five design elements to review its artifacts, common mistakes, and exam phrasing.
+                </p>
+
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <div class="explorer-btn active" data-target="expl-data">Data</div>
+                    <div class="explorer-btn" data-target="expl-arch">Architecture</div>
+                    <div class="explorer-btn" data-target="expl-int">Interface</div>
+                    <div class="explorer-btn" data-target="expl-comp">Component</div>
+                    <div class="explorer-btn" data-target="expl-dep">Deployment</div>
+                </div>
+
+                <div id="expl-data" class="tool-section active card">
+                    <h3>Data Design</h3>
+                    <p><strong>Description:</strong> Translating information models to DB schemas and data structures.
+                    </p>
+                    <p><strong>Typical Artifacts:</strong> ER Diagrams, Schema definitions, Data Dictionaries.</p>
+                    <p><strong>Common Mistake:</strong> Ignoring data normalization or relying purely on arrays instead
+                        of DBs for large data.</p>
+                    <p><strong>Exam Phrasing:</strong> "How do you map the conceptual ERD to a physical database?"</p>
+                </div>
+
+                <div id="expl-arch" class="tool-section card">
+                    <h3>Architectural Design</h3>
+                    <p><strong>Description:</strong> The overall structure of the software, identifying major
+                        subsystems.</p>
+                    <p><strong>Typical Artifacts:</strong> Component Diagrams, Layered logic models.</p>
+                    <p><strong>Common Mistake:</strong> Choosing an architecture based on "hype" rather than evaluating
+                        quality attributes (e.g., using microservices for a tiny app).</p>
+                    <p><strong>Exam Phrasing:</strong> "Justify an architectural style for a distributed banking
+                        system."</p>
+                </div>
+
+                <div id="expl-int" class="tool-section card">
+                    <h3>Interface Design</h3>
+                    <p><strong>Description:</strong> Defining how the system interacts with users and other systems.</p>
+                    <p><strong>Typical Artifacts:</strong> Wireframes, API Specs (Swagger/OpenAPI).</p>
+                    <p><strong>Common Mistake:</strong> Forgetting error states on API endpoints or poor consistency in
+                        GUI design.</p>
+                    <p><strong>Exam Phrasing:</strong> "Explain the principle of consistency in UI design."</p>
+                </div>
+
+                <div id="expl-comp" class="tool-section card">
+                    <h3>Component Design</h3>
+                    <p><strong>Description:</strong> The algorithms and class internals that make the system work.</p>
+                    <p><strong>Typical Artifacts:</strong> Class Diagrams, Activity Diagrams, Pseudocode.</p>
+                    <p><strong>Common Mistake:</strong> Creating "God Classes" (low cohesion) or heavily coupled
+                        modules.</p>
+                    <p><strong>Exam Phrasing:</strong> "Differentiate between cohesion and coupling."</p>
+                </div>
+
+                <div id="expl-dep" class="tool-section card">
+                    <h3>Deployment Design</h3>
+                    <p><strong>Description:</strong> Mapping software to physical hardware nodes.</p>
+                    <p><strong>Typical Artifacts:</strong> UML Deployment Diagram, Network Topology maps.</p>
+                    <p><strong>Common Mistake:</strong> Assuming instantaneous network calls (ignoring latency
+                        realistically).</p>
+                    <p><strong>Exam Phrasing:</strong> "Draw a deployment diagram mapping a 3-tier web app to cloud
+                        servers."</p>
+                </div>
+            </section>
+
+            <section class="glass-panel reveal">
+                <h2>2. Flashcards</h2>
+                <p>Click to flip. Use Arrow keys to navigate conceptually (coming soon), or Space/Enter to flip via
+                    keyboard.</p>
+                <div class="grid-2">
+                    <div class="flashcard" tabindex="0">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">High Cohesion</div>
+                            <div class="flashcard-back">A module performs a single, well-defined task with minimal
+                                externally visible side effects.</div>
+                        </div>
+                    </div>
+                    <div class="flashcard" tabindex="0">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">Low Coupling</div>
+                            <div class="flashcard-back">Modules have minimal, clearly defined dependencies on one
+                                another.</div>
+                        </div>
+                    </div>
+                    <div class="flashcard" tabindex="0">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">MVC Architecture</div>
+                            <div class="flashcard-back">Model (Data), View (UI), Controller (Input Logic). Decouples
+                                presentation from business logic.</div>
+                        </div>
+                    </div>
+                    <div class="flashcard" tabindex="0">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">Abstraction</div>
+                            <div class="flashcard-back">Focusing on essential system qualities while suppressing
+                                implementation details.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-panel reveal">
+                <h2>3. Quick Quiz</h2>
+                <p>Test your knowledge with immediate feedback.</p>
+
+                <div id="quiz-container">
+                    <!-- Quiz populated by JS -->
+                </div>
+            </section>
+
+            <section class="glass-panel reveal">
+                <h2>4. Case Study Generator</h2>
+                <p>Generate a prompt to practice architectural justification.</p>
+                <div>
+                    <button id="generate-case" class="btn btn-primary">Generate Random Scenario</button>
+                    <div id="case-output" class="card" style="margin-top: 1rem; display: none;"></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="assets/app.js"></script>
+    <script>
+        // Explorer Logic
+        document.querySelectorAll('.explorer-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.explorer-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tool-section').forEach(s => s.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.target).classList.add('active');
+            });
+        });
+
+        // Quiz Logic
+        const questions = [
+            {
+                q: "Which design concept focuses on a module performing exactly one well-defined task?",
+                options: ["Coupling", "Cohesion", "Abstraction", "Refactoring"],
+                answer: 1,
+                explanation: "Cohesion is a measure of how strongly related and focused the responsibilities of a single module are."
+            },
+            {
+                q: "Which architectural style is characterized by a central server supplying data to multiple requesting agents?",
+                options: ["Layered/N-Tier", "Pipe-and-Filter", "Client-Server", "Peer-to-Peer"],
+                answer: 2,
+                explanation: "Client-Server involves clients requesting information or services and servers responding to those requests."
+            },
+            {
+                q: "What does Deployment Design primarily deal with?",
+                options: ["Class algorithms", "Database tables", "User Interfaces", "Physical hardware nodes"],
+                answer: 3,
+                explanation: "Deployment design maps software subsystems to the physical computing environment (hardware nodes)."
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+        questions.forEach((q, qIndex) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'quiz-question';
+            qDiv.innerHTML = `<h3>Q${qIndex + 1}: ${q.q}</h3><div class="quiz-options"></div><div class="quiz-feedback" style="background: var(--surface-color); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);"></div>`;
+
+            const optionsContainer = qDiv.querySelector('.quiz-options');
+            const feedbackDiv = qDiv.querySelector('.quiz-feedback');
+
+            q.options.forEach((opt, oIndex) => {
+                const optDiv = document.createElement('div');
+                optDiv.className = 'quiz-option';
+                optDiv.textContent = opt;
+                optDiv.addEventListener('click', () => {
+                    // Reset
+                    optionsContainer.querySelectorAll('.quiz-option').forEach(o => {
+                        o.classList.remove('correct', 'wrong');
+                        o.style.pointerEvents = 'none'; // Lock after answer
+                    });
+
+                    if (oIndex === q.answer) {
+                        optDiv.classList.add('correct');
+                        feedbackDiv.classList.add('show');
+                        feedbackDiv.innerHTML = `✅ <strong>Correct!</strong> <br> ${q.explanation}`;
+                        feedbackDiv.style.borderLeft = "4px solid var(--success)";
+                    } else {
+                        optDiv.classList.add('wrong');
+                        optionsContainer.children[q.answer].classList.add('correct');
+                        feedbackDiv.classList.add('show');
+                        feedbackDiv.innerHTML = `❌ <strong>Incorrect.</strong> <br> ${q.explanation}`;
+                        feedbackDiv.style.borderLeft = "4px solid var(--error)";
+                    }
+                });
+                optionsContainer.appendChild(optDiv);
+            });
+            quizContainer.appendChild(qDiv);
+        });
+
+        // Case Study Logic
+        const cases = [
+            { title: "Food Delivery App", desc: "Design a system that handles real-time driver tracking, user ordering, and restaurant notifications. Justify your architectural choice (e.g., Client-Server vs Microservices) and detail the data design for an 'Order'." },
+            { title: "University Event System", desc: "Students need to register for campus events. Admins need batch processing overnight to print tickets. What pattern handles the batch processing? (Hint: Pipe and Filter). Justify." },
+            { title: "Local E-Commerce Offline Kiosk", desc: "A kiosk in a mall needs to run even when the internet is down, syncing sales at night. Detail the Component and Deployment design for the sync job." }
+        ];
+        document.getElementById('generate-case').addEventListener('click', () => {
+            const random = cases[Math.floor(Math.random() * cases.length)];
+            const out = document.getElementById('case-output');
+            out.style.display = 'block';
+            out.innerHTML = `<h4>${random.title}</h4><p>${random.desc}</p>`;
+        });
+    </script>
+</body>
+
+</html>

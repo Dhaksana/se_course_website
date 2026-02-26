@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 11: Data & Architecture | SE Design</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+    <header>
+        <div class="logo">SE Design</div>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lecture10.html">Lecture 10</a></li>
+                <li><a href="lecture11.html" class="active">Lecture 11</a></li>
+                <li><a href="lecture12.html">Lecture 12</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="search.html" aria-label="Search">🔍</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Lecture 11: Data &amp; Architectural Design</h1>
+
+            <section id="data" class="glass-panel reveal">
+                <div class="topic-header">
+                    <h2>1. Data Design</h2>
+                    <input type="checkbox" class="progress-check" aria-label="Mark complete">
+                </div>
+
+                <h3>What it means</h3>
+                <p>Data design translates data objects defined as part of the analysis model into data structures at the
+                    software component level and, when necessary, a database architecture at the application level.</p>
+
+                <h3>Why it matters</h3>
+                <p>Bad data design leads to inefficient algorithms and a fragile database. Creating the right data
+                    abstractions is essential before you write functions that manipulate that data.</p>
+
+                <h3>How it appears in practice</h3>
+                <p>Mapping entity-relationship diagrams (ERDs) or class diagrams created during requirements analysis to
+                    relational tables, NoSQL documents, or in-memory arrays and dictionaries. Defining data integrity
+                    and constraints.</p>
+
+                <div class="joke-box">
+                    <strong>Memory Loss?</strong><br>
+                    Remember: "persistent data" is the stuff the database remembers after a power outage. "transient
+                    data" is the stuff that vanishes faster than your motivation on a Friday afternoon! Both fall under
+                    Data Design.
+                </div>
+
+                <div class="exam-angle">
+                    <strong>Exam Angle: Analysis vs Design Data</strong><br>
+                    <p>You may be asked how data is mapped. State that Analysis-level Data focuses on real-world
+                        entities and relationships, whereas Design-level Data translates these into specific databases
+                        formats, keys, indexes, and memory-efficient data structures.</p>
+                    <button class="copy-btn">Copy Summary</button>
+                    <div class="sr-only">Data design bridges abstract requirements models into concrete database schemas
+                        and localized software data structures, ensuring integrity and efficiency.</div>
+                </div>
+            </section>
+
+            <section id="architecture" class="glass-panel reveal">
+                <div class="topic-header">
+                    <h2>2. Architectural Design</h2>
+                    <input type="checkbox" class="progress-check" aria-label="Mark complete">
+                </div>
+
+                <div class="mascot-container alt" aria-hidden="true">
+                    <svg class="mascot-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,20 80,35 50,50 20,35" fill="var(--accent-color)" />
+                        <polygon points="20,35 50,50 50,80 20,65" fill="#a4282c" />
+                        <polygon points="80,35 50,50 50,80 80,65" fill="#e95c62" />
+                        <circle cx="35" cy="55" r="4" fill="white" />
+                        <circle cx="45" cy="60" r="4" fill="white" />
+                    </svg>
+                </div>
+
+                <h3>What it means</h3>
+                <p>Software architecture represents the overarching structure of the software system. It encompasses the
+                    components (e.g., databases, middleware, UI), the ways they interact, and the data consumed or
+                    produced.</p>
+
+                <h3>Architectural Views</h3>
+                <p>Because architecture is complex, it cannot be represented by a single diagram. We use multiple views
+                    to describe it to different stakeholders:</p>
+                <ul>
+                    <li><strong>Logical View:</strong> Represents the abstractions mapping to requirements (e.g.,
+                        classes, user entities, and their relationships). This view is primarily for the developers and
+                        systems analysts to ensure business requirements are met.</li>
+                    <li><strong>Process View:</strong> Focuses on the dynamic aspects of the system—concurrency,
+                        threads, and execution behavior. It shows how the system handles multiple users and processes
+                        simultaneously, which is critical for performance engineers.</li>
+                    <li><strong>Development/Code View:</strong> Shows how modules and files are physically organized
+                        within the development environment (e.g., packages, libraries, namespaces). Useful for
+                        programmers managing the codebase.</li>
+                    <li><strong>Deployment/Physical View:</strong> Describes how the software elements are mapped to
+                        physical hardware nodes (servers, devices, cloud containers). This is essential for network and
+                        deployment engineers.</li>
+                </ul>
+
+                <!-- MVC SVG Diagram -->
+                <div
+                    style="text-align: center; margin: 2rem 0; padding: 2rem; background: var(--surface-color); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); border-radius: var(--radius);">
+                    <div class="svg-container">
+                        <svg width="100%" height="auto" viewBox="0 0 500 200" style="max-width: 500px;"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Controller -->
+                            <rect x="180" y="20" width="140" height="60" fill="var(--warning)"
+                                stroke="var(--border-color)" stroke-width="4" rx="8" />
+                            <text x="250" y="55" text-anchor="middle" font-family="sans-serif" font-weight="bold"
+                                fill="var(--border-color)" font-size="16">Controller</text>
+
+                            <!-- Model -->
+                            <rect x="340" y="120" width="140" height="60" fill="var(--success)"
+                                stroke="var(--border-color)" stroke-width="4" rx="8" />
+                            <text x="410" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold"
+                                fill="var(--border-color)" font-size="16">Model</text>
+
+                            <!-- View -->
+                            <rect x="20" y="120" width="140" height="60" fill="var(--accent-color)"
+                                stroke="var(--border-color)" stroke-width="4" rx="8" />
+                            <text x="90" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold"
+                                fill="white" font-size="16">View</text>
+
+                            <!-- Arrows -->
+                            <!-- User to Controller -->
+                            <path d="M250,0 L250,15" stroke="var(--text-primary)" stroke-width="3" />
+                            <text x="250" y="-5" text-anchor="middle" font-family="sans-serif" font-size="12"
+                                fill="var(--text-primary)">User Action</text>
+
+                            <!-- Controller to Model -->
+                            <line x1="280" y1="80" x2="360" y2="120" stroke="var(--border-color)" stroke-width="3"
+                                stroke-dasharray="5" />
+
+                            <!-- Model to View -->
+                            <line x1="340" y1="150" x2="160" y2="150" stroke="var(--border-color)" stroke-width="3"
+                                stroke-dasharray="5" />
+                            <text x="250" y="145" text-anchor="middle" font-family="sans-serif" font-size="12"
+                                fill="var(--text-secondary)">Updates</text>
+
+                            <!-- Controller to View -->
+                            <line x1="220" y1="80" x2="140" y2="120" stroke="var(--border-color)" stroke-width="3"
+                                stroke-dasharray="5" />
+                        </svg>
+                    </div>
+                    <p class="caption">
+                        The MVC Architecture: The Controller receives input, strictly separating the Model (data) from
+                        the View (UI).</p>
+                </div>
+
+                <h3>Common Architectural Styles</h3>
+                <p>Hover over the cards below to explore different architectural styles.</p>
+
+                <div class="grid-2" style="margin-top: 2rem;">
+                    <div class="arch-card-container">
+                        <div class="arch-card-inner">
+                            <div class="arch-card-front">
+                                <h4>Layered (N-tier)</h4>
+                                <p>UI &rarr; Business Logic &rarr; Data Access. Clear separation of concerns.</p>
+                            </div>
+                            <div class="arch-card-back">
+                                <p>Components are organized in layers. Each layer provides services to the layer above
+                                    it. Best for traditional line-of-business apps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-card-container">
+                        <div class="arch-card-inner">
+                            <div class="arch-card-front">
+                                <h4>Client-Server</h4>
+                                <p>Distributed components where one acts as a host and others as requestors.</p>
+                            </div>
+                            <div class="arch-card-back">
+                                <p>Clients request info, servers provide it. High scalability, centralizes data.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-card-container">
+                        <div class="arch-card-inner">
+                            <div class="arch-card-front">
+                                <h4>Pipe-and-Filter</h4>
+                                <p>Independent components execute data transformations sequentially.</p>
+                            </div>
+                            <div class="arch-card-back">
+                                <p>Data sequentially passes through a series of components (filters). Best for batch
+                                    processing or transformations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-card-container">
+                        <div class="arch-card-inner">
+                            <div class="arch-card-front">
+                                <h4>MVC Pattern</h4>
+                                <p>Strict separation of presentation code from business logic.</p>
+                            </div>
+                            <div class="arch-card-back">
+                                <p>Separates data (Model), UI (View), and input logic (Controller). Standard for web
+                                    apps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-block" data-title="Layered Architecture in Code">
+                    <pre><code class="language-java">// 1. Presentation Layer (UI / Controller)
+class UserView {
+    public void handleLogin(String username, String password) {
+        // Calls the layer directly below it
+        AuthLogic.login(username, password);
+    }
+}
+
+// 2. Business Logic Layer
+class AuthLogic {
+    public static String login(String username, String password) {
+        // Enforces rules, then calls the layer below it
+        User user = DataAccess.getUser(username);
+        if (user != null && user.getPassword().equals(hash(password))) {
+            return "Success";
+        }
+        return "Failure";
+    }
+}
+
+// 3. Data Access Layer
+class DataAccess {
+    public static User getUser(String username) {
+        // The ONLY layer allowed to touch the database
+        return db.query("SELECT * FROM users WHERE name=?", username);
+    }
+}</code></pre>
+                </div>
+
+                <div class="exam-angle" style="margin-top: 2rem;">
+                    <strong>Exam Angle: Justifying Architecture</strong><br>
+                    <p>Exams frequently ask you to choose an architecture for a given scenario. To score well, you MUST
+                        mention Trade-offs. E.g., "I choose Client-Server for the banking app because it centralizes
+                        security and data consistency, at the cost of requiring a continuous network connection."</p>
+                    <button class="copy-btn">Copy Summary</button>
+                    <div class="sr-only">Choosing an architecture requires balancing quality attributes. Always justify
+                        the choice with explicit trade-offs like scalability vs simplicity, or performance vs
+                        maintainability.</div>
+                </div>
+
+                <div style="text-align: center; margin: 3rem 0;">
+                    <a href="https://xkcd.com/323/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://imgs.xkcd.com/comics/ballmer_peak.png"
+                            alt="XKCD Ballmer Peak: Software architecture and the delicate balance of productivity"
+                            style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: var(--radius); box-shadow: var(--shadow-md);">
+                    </a>
+                    <p class="caption">
+                        XKCD 323: A joke about what it takes to actually understand architecture design.</p>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
+                    <a href="lecture10.html" class="btn btn-secondary">&larr; Back to Lecture 10</a>
+                    <a href="lecture12.html" class="btn btn-primary">Proceed to Lecture 12 &rarr;</a>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar" aria-label="Table of Contents">
+            <h4>In this Lecture</h4>
+            <nav class="toc">
+                <ul>
+                    <li><a href="#data">1. Data Design</a></li>
+                    <li><a href="#architecture">2. Architectural Design</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+
+    <div class="presenter-controls">
+        <a href="lecture10.html" class="btn btn-secondary">&larr; Prev Lecture</a>
+        <a href="lecture12.html" class="btn btn-primary">Next Lecture &rarr;</a>
+    </div>
+
+    <script src="assets/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+
+</html>

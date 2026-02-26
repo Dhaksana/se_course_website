@@ -7,6 +7,7 @@ import {Guidelines} from './guidelines/guidelines';
 import {Review1Guidelines} from './review1-guidelines/review1-guidelines';
 import {AssignmentSubmission} from './assignment-submission/assignment-submission';
 import {DevopsGuideline} from './devops-guideline/devops-guideline';
+import {DesignEngineering} from './design-engineering/design-engineering';
 
 
 export const routes: Routes = [
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'review1-guidelines', component: Review1Guidelines },
   { path: 'assignment-submission', component: AssignmentSubmission },
   { path: 'devops-guidelines', component: DevopsGuideline },
+  { path: 'design-engineering', component: DesignEngineering },
 ];
 
 @NgModule({

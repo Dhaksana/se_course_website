@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | SE Design</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">SE Design</div>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lecture10.html">Lecture 10</a></li>
+                <li><a href="lecture11.html">Lecture 11</a></li>
+                <li><a href="lecture12.html">Lecture 12</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="search.html" class="active" aria-label="Search">🔍</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="flex-direction: column; max-width: 800px; padding-top: 4rem;">
+        <h1>Search Course Material</h1>
+        <input type="search" id="search-input" class="search-input"
+            placeholder="Search for 'cohesion', 'architecture', etc..." aria-label="Search site content" autofocus>
+
+        <div id="search-results" style="margin-top: 2rem;">
+            <p style="color: var(--text-secondary);">Enter a term above to begin searching.</p>
+        </div>
+    </main>
+
+    <script src="assets/app.js"></script>
+    <script src="assets/search.js"></script>
+</body>
+
+</html>
