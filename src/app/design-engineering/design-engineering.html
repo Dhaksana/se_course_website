@@ -1,0 +1,81 @@
+<div class="design-engineering-wrapper">
+  <!-- Overview/Landing Page -->
+  <div class="de-hero bg-gradient-to-br from-blue-50 to-blue-100 p-12 rounded-lg shadow-lg mb-8">
+    <h1 class="text-5xl font-bold text-gray-900 mb-4">Design Engineering</h1>
+    <p class="text-xl text-gray-700 max-w-2xl">
+      Master the critical bridge between what the client thinks they want and what we actually build. Learn how to architect, structure, and refine software systems.
+    </p>
+  </div>
+
+  <!-- Quick Navigation -->
+  <div class="de-nav-tabs flex gap-4 mb-8 flex-wrap">
+    <a routerLink="/design-engineering/overview" 
+       routerLinkActive="bg-blue-600 text-white"
+       class="px-6 py-3 rounded-lg bg-gray-200 text-gray-900 font-semibold hover:bg-blue-500 hover:text-white transition">
+      Overview
+    </a>
+    <a routerLink="/design-engineering/lectures" 
+       routerLinkActive="bg-blue-600 text-white"
+       class="px-6 py-3 rounded-lg bg-gray-200 text-gray-900 font-semibold hover:bg-blue-500 hover:text-white transition">
+      Lectures
+    </a>
+    <a routerLink="/design-engineering/tools" 
+       routerLinkActive="bg-blue-600 text-white"
+       class="px-6 py-3 rounded-lg bg-gray-200 text-gray-900 font-semibold hover:bg-blue-500 hover:text-white transition">
+      Tools & Quizzes
+    </a>
+
+  </div>
+
+  <!-- Content Area -->
+  <div class="de-content">
+    <router-outlet></router-outlet>
+
+    <!-- Default Overview Content (shown if no sub-route) -->
+    <div class="de-default-content">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Learning Outcomes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg border-2 border-blue-200 shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">What You Will Understand</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• The purpose of design in the software engineering process</li>
+              <li>• Core design concepts: abstraction, modularity, and refinement</li>
+              <li>• The five elements of the Design Model</li>
+              <li>• How to evaluate design quality and architectural styles</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg border-2 border-blue-600 shadow">
+            <h3 class="text-xl font-bold text-blue-600 mb-4">What You Will Be Able To Do 🛠️</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Map requirements to design structures</li>
+              <li>• Apply component-level and interface design principles</li>
+              <li>• Identify and mitigate common design mistakes</li>
+              <li>• Answer exam-level questions on software design trade-offs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Course Structure</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow hover:shadow-lg transition">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Lecture 10</h3>
+            <p class="text-gray-600 mb-4">Introduction to Design Engineering, Core Design Concepts, and the overall Design Model.</p>
+            
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow hover:shadow-lg transition">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Lecture 11</h3>
+            <p class="text-gray-600 mb-4">Translating information models into data structures and defining the structural architecture.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow hover:shadow-lg transition">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Lecture 12</h3>
+            <p class="text-gray-600 mb-4">Interfaces, Components, Deployment mapping, Patterns, and evaluating for Quality.</p>
+            
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
